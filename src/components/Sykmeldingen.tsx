@@ -574,9 +574,10 @@ const Sykmeldingen: React.FC = () => {
                         tilbakedatertLopendePeriodeBuilder()}
                     {aktuellArsak === RuleNames.TILBAKEDATERT_MER_ENN_8_DAGER_FORSTE_SYKMELDING_MED_BEGRUNNELSE &&
                         tilbakedatertBuilder()}
-                    {aktuellArsak === RuleNames.AVVENTENDE_SYKMELDING_KOMBINERT && flerePerioderBuilder()}
                     {aktuellArsak === RuleNames.BEHANDLER_KI_FT_MT_BENYTTER_ANNEN_DIAGNOSEKODE_ENN_L &&
                         kiropraktorBuilder()}
+                    {aktuellArsak === RuleNames.UGYLDIG_KODEVERK_FOR_BIDIAGNOSE && <p>Ugyldig kodeverk</p>}
+                    {aktuellArsak === RuleNames.PASIENTEN_HAR_KODE_6 && <p>Kode 6</p>}
                 </div>
                 <div className="linje-vannrett"></div>
                 <Radiogruppe radioNavn="sykmelding-visning" />
