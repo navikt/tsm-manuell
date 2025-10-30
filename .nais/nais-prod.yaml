@@ -1,0 +1,50 @@
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
+metadata:
+  name: tsm-manuell
+  namespace: tsm
+  labels:
+    team: tsm
+spec:
+  image: {{image}}
+  replicas:
+    min: 2
+    max: 6
+    scalingStrategy:
+      cpu:
+        thresholdPercentage: 90
+  port: 3000
+  liveness:
+    path: /api/internal/is_alive
+  readiness:
+    path: /api/internal/is_ready
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: nodejs
+    logging:
+      destinations:
+        - id: loki
+        - id: elastic
+  prometheus:
+    enabled: true
+    path: /api/internal/metrics
+  resources:
+    limits:
+      memory: 1Gi
+    requests:
+      cpu: 40m
+      memory: 300Mi
+  azure:
+    application:
+      enabled: true
+      tenant: nav.no
+      allowAllUsers: true
+    sidecar:
+      enabled: true
+      autoLogin: true
+      autoLoginIgnorePaths:
+        - /api/*
+        - /favicon.ico
+  ingresses:
+    - 'https://tsm-manuell.intern.nav.no'
