@@ -674,6 +674,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@navikt/ds-css@npm:^7.33.0":
+  version: 7.33.0
+  resolution: "@navikt/ds-css@npm:7.33.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fds-css%2F7.33.0%2F7b85136c9fa05cee3e4c0ccc191e2f3758df4069"
+  checksum: 10c0/225635e035718194a156eed41d03b1472b4d3e9d2bcaa3c54a5056fa858558b50359aa607aa55b0ff70990da6d3c5e3425eff9fc05a8ee6acabf9082b758cae9
+  languageName: node
+  linkType: hard
+
 "@navikt/ds-react@npm:^7.33.0":
   version: 7.33.0
   resolution: "@navikt/ds-react@npm:7.33.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fds-react%2F7.33.0%2F50269f2d3762a9e0e510221b0a1f98f9f0946c15"
@@ -690,6 +697,13 @@ __metadata:
     react: ^17 || ^18 || ^19
     react-dom: ^17 || ^18 || ^19
   checksum: 10c0/045a08fddaeacdd3ede3e1401c80672ba0ed795140a0c99a1f8884a05378d42452506e867459f77af68cc32505007ef4cfd87d0f64bfaf40b07f734a78abcfc6
+  languageName: node
+  linkType: hard
+
+"@navikt/ds-tailwind@npm:^7.33.0":
+  version: 7.33.0
+  resolution: "@navikt/ds-tailwind@npm:7.33.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fds-tailwind%2F7.33.0%2Ffa97b7c31e710b3d29b2586b999bd67f69b62f99"
+  checksum: 10c0/a6fe576f23f341431f7ab87272f39dad055b2dc30b7ab193d266825ad03893944e49cb2227092ccb220aa92a876fb0d8f0de89816fe05bff5f080b6fd9112218
   languageName: node
   linkType: hard
 
@@ -4611,7 +4625,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tsm-manuell@workspace:."
   dependencies:
+    "@navikt/ds-css": "npm:^7.33.0"
     "@navikt/ds-react": "npm:^7.33.0"
+    "@navikt/ds-tailwind": "npm:^7.33.0"
     "@navikt/next-logger": "npm:^4.4.1"
     "@tailwindcss/postcss": "npm:^4.1.16"
     "@types/node": "npm:^24.9.1"
