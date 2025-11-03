@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Preload from "@/app/preload";
 
 export const metadata: Metadata = {
   title: "TSM manuell",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
+    <Preload />
       <body>
         {children}
       </body>
