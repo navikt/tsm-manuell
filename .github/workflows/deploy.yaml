@@ -36,7 +36,7 @@ jobs:
       image: ${{ steps.next-build.outputs.image }}
 
   build-demo:
-    if: github.ref_name == 'main' || startsWith(github.ref_name, 'demo')
+    if: github.ref_name == 'main' || startsWith(github.ref_name, 'demo/')
     name: Build for demo
     runs-on: ubuntu-latest
     steps:
@@ -98,9 +98,9 @@ jobs:
           VAR: image=${{ needs.build-dev.outputs.image }}
           NAIS_DEPLOY_SUMMARY: false
 
-  deploy-demo-main:
-    if: github.ref_name == 'main'
-    name: Deploy main to demo
+  deploy-demo:
+    if: github.ref_name == 'main' || startsWith(github.ref_name, 'demo/')
+    name: Deploy demo
     environment:
       name: demo-main
       url: https://${{ env.APP }}.ekstern.dev.nav.no
