@@ -35,6 +35,7 @@ updates:
         patterns:
           - 'tailwindcss'
           - 'postcss'
+          - '@tailwindcss/postcss'
       graphql-codegen:
         patterns:
           - '@graphql-codegen/*'
@@ -50,6 +51,9 @@ updates:
           - '@navikt/next-auth-wonderwall'
           - '@navikt/next-logger'
           - 'nextleton'
+          - '@navikt/tsm-eslint-react'
+          - '@navikt/tsm-prettier'
+          - '@navikt/oasis'
       next:
         patterns:
           - 'next'
