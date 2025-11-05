@@ -41,3 +41,13 @@ spec:
       autoLogin: true
   ingresses:
     - 'https://tsm-manuell.intern.dev.nav.no'
+  accessPolicy:
+    outbound:
+      rules:
+        - application: modiacontextholder
+          namespace: personoversikt
+  env:
+    - name: MODIA_CONTEXT_SCOPE
+      value: api://dev-gcp.personoversikt.modiacontextholder/.default
+    - name: MODIA_CONTEXT_URL
+      value: http://modiacontextholder.personoversikt

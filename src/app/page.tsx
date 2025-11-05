@@ -1,9 +1,14 @@
 import { ReactElement } from 'react'
+import { Heading } from '@navikt/ds-react'
 
-export default function Page(): ReactElement {
+function Page(): ReactElement {
     return (
         <div>
-            <h1>TSM manuell</h1>
+            <Heading size="large" spacing>
+                Manuell vurdering av tilbakedatert sykmelding
+            </Heading>
         </div>
     )
 }
+
+export default Page

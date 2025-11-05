@@ -1,13 +1,21 @@
-import type { Metadata } from 'next'
 import { ReactElement, ReactNode } from 'react'
+import type { Metadata } from 'next'
+
+import { getModiaContext } from '@/services/modiaService'
+
+import Providers from '../Providers'
 import '@/app/globals.css'
+import PageHeader from '../components/header/PageHeader'
+import EnhetError from '../components/header/EnhetError'
 
 export const metadata: Metadata = {
     title: 'TSM manuell',
-    description: 'Saksbehandlerfrontend for manuell behandling av tilbakedaterte sykemeldinger. ',
+    description: 'Saksbehandlerfrontend for manuell behandling av tilbakedaterte sykemeldinger.',
 }
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>): ReactElement {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>): Promise<ReactElement> {
+    const modiaContext = await getModiaContext()
+
     return (
         <html lang="no">
             <head>
@@ -20,7 +28,14 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                 />
                 <title>TSM manuell</title>
             </head>
-            <body>{children}</body>
+            <body className="bg-bg-subtle">
+                <Providers modiaContext={modiaContext}>
+                    <PageHeader />
+                    <main className="mx-auto min-h-screen max-w-3xl bg-white p-8">
+                        {'errorType' in modiaContext ? <EnhetError error={modiaContext} /> : children}
+                    </main>
+                </Providers>
+            </body>
         </html>
     )
 }

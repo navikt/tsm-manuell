@@ -39,12 +39,24 @@ spec:
     application:
       enabled: true
       tenant: nav.no
-      allowAllUsers: true
+      claims:
+        extra:
+          - "NAVident"
+        groups:
+          # 0000-GA-SYFO-SENSITIV geografisk tilgang til sykmeldinger
+          - id: "100e88eb-79af-4136-8bfe-f79b32021f43"
     sidecar:
       enabled: true
       autoLogin: true
-      autoLoginIgnorePaths:
-        - /api/*
-        - /favicon.ico
   ingresses:
     - 'https://tsm-manuell.intern.nav.no'
+  accessPolicy:
+    outbound:
+      rules:
+        - application: modiacontextholder
+          namespace: personoversikt
+  env:
+    - name: MODIA_CONTEXT_SCOPE
+      value: api://prod-gcp.personoversikt.modiacontextholder/.default
+    - name: MODIA_CONTEXT_URL
+      value: http://modiacontextholder.personoversikt
