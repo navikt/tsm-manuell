@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server'
 
 export default async function proxy(req: NextRequest): Promise<NextResponse> {
     const requestHeaders = new Headers(req.headers)
