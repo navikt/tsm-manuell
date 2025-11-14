@@ -30,7 +30,8 @@ export async function getModiaContext(): Promise<ModiaData | ModiaDataError> {
     const requestHeaders = await headers()
     const token = getToken(requestHeaders)
     if (!token) {
-        logger.error('No access token found in request when fetching modia context')
+        //TODO: production hits here
+        //logger.error('No access token found in request when fetching modia context')
         return {
             errorType: 'FETCH_ERROR',
             message: 'Klarte ikke å hente veileder',
