@@ -22,8 +22,8 @@
     "next": "16.0.7",
     "next-logger": "^5.0.2",
     "pino": "^10.1.0",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "zod": "^4.1.13"
   },
   "devDependencies": {
