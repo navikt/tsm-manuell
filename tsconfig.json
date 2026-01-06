@@ -21,10 +21,11 @@
         "baseUrl": "./src",
         "paths": {
             "@/app/*": ["app/*"],
+            "@/components/*": ["components/*"],
             "@/services/*": ["services/*"],
             "@/utils/*": ["utils/*"],
             "@/context/*": ["context/*"],
-            "@/schema/*": ["schema/*"],
+            "@/schema/*": ["schema/*"]
         }
     },
     "include": ["src/**/*.ts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],

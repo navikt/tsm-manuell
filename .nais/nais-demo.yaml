@@ -31,6 +31,12 @@ spec:
     requests:
       cpu: 50m
       memory: 300Mi
+  accessPolicy:
+    outbound:
+      rules:
+        - application: modiacontextholder
+          namespace: personoversikt
+        - application: tsm-manuell-api
   env:
     - name: RUNTIME_ENVIRONMENT
       value: demo

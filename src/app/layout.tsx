@@ -2,11 +2,11 @@ import { ReactElement, ReactNode } from 'react'
 import type { Metadata } from 'next'
 
 import { getModiaContext } from '@/services/modiaService'
+import '@/app/globals.css'
+import PageHeader from '@/components/header/PageHeader'
+import EnhetError from '@/components/header/EnhetError'
 
 import Providers from '../Providers'
-import '@/app/globals.css'
-import PageHeader from '../components/header/PageHeader'
-import EnhetError from '../components/header/EnhetError'
 
 export const metadata: Metadata = {
     title: 'TSM manuell',

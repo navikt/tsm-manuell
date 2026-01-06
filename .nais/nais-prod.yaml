@@ -55,6 +55,7 @@ spec:
       rules:
         - application: modiacontextholder
           namespace: personoversikt
+        - application: tsm-manuell-api
   env:
     - name: MODIA_CONTEXT_SCOPE
       value: api://prod-gcp.personoversikt.modiacontextholder/.default
