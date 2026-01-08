@@ -1,9 +1,6 @@
 import { z } from 'zod'
 import { SykmeldingBaseSchema } from '@/utils/data-layer/sykmeldingSchema'
 
-
-
-
 export const ManuellOppgaveSchema = z.object({
     oppgaveId: z.number(),
     ident: z.string(),
@@ -13,3 +10,5 @@ export const ManuellOppgaveSchema = z.object({
     status: z.string().nullable(),
     statusTimestamp: z.string().nullable(),
 })
+
+export type ManuellOppgaveType = z.infer<typeof ManuellOppgaveSchema>

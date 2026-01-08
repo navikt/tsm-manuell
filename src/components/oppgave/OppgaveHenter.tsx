@@ -3,7 +3,8 @@
 import { ReactElement, useState } from 'react'
 import { Button, TextField } from '@navikt/ds-react'
 
-import { hentOppgave, ManuellOppgaveResponse } from '@/services/oppgaveService'
+import { hentOppgave } from '@/services/oppgaveService'
+import { ManuellOppgaveType } from '@/utils/data-layer/manuellOppgaveSchema'
 
 /**
  * A component that lets the user input an oppgaveId and fetch it from the backend.
@@ -18,7 +19,7 @@ function OppgaveHenter(): ReactElement {
     // State for the input field - updates as user types
     const [oppgaveId, setOppgaveId] = useState<string>('')
 
-    const [oppgaveData, setOppgaveData] = useState<ManuellOppgaveResponse | null>(null)
+    const [oppgaveData, setOppgaveData] = useState<ManuellOppgaveType | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
 
