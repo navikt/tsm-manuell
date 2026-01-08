@@ -1,13 +1,15 @@
 import { getToken, requestOboToken, validateToken } from '@navikt/oasis'
 import { headers } from 'next/headers'
 
+import { createAccessToken } from '@/utils/jwt'
+
 export async function apiFetch(path: string, method: 'GET' | 'POST', requestBody?: object): Promise<Response> {
     if (process.env.NODE_ENV !== 'production') {
         try {
             return fetch(`http://localhost:8080/${path}`, {
                 method,
                 body: requestBody ? JSON.stringify(requestBody) : undefined,
-                headers: { Authorization: `Bearer DummyToken` },
+                headers: { Authorization: `Bearer ${await createAccessToken('local-dev', '1234567890')}` },
             })
         } catch (e) {
             console.log('Klarte ikkje å få kontakt med bakenden, har du hugsa å skru han på?', e)
