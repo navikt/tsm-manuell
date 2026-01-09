@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { ManuellOppgaveSchema } from '@/utils/data-layer/manuellOppgaveSchema'
+
 export const ArbeidsgiverInfoSchema = z.object({
     navn: z.string().nullable(),
     yrkesbetegnelse: z.string().nullable(),
@@ -126,13 +128,7 @@ export const SykmelderSchema = z.object({
     helsepersonellKategori: HelsepersonellKategoriSchema,
 })
 
-export const DiagnoseSystemSchema = z.enum([
-    'ICPC2',
-    'ICD10',
-    'ICPC2B',
-    'PHBU',
-    'UGYLDIG',
-])
+export const DiagnoseSystemSchema = z.enum(['ICPC2', 'ICD10', 'ICPC2B', 'PHBU', 'UGYLDIG'])
 
 export const DiagnoseInfoSchema = z.object({
     system: DiagnoseSystemSchema,
@@ -147,10 +143,7 @@ export const MedisinskArsakTypeSchema = z.enum([
     'ANNET',
 ])
 
-export const ArbeidsrelatertArsakTypeSchema = z.enum([
-    'MANGLENDE_TILRETTELEGGING',
-    'ANNET',
-])
+export const ArbeidsrelatertArsakTypeSchema = z.enum(['MANGLENDE_TILRETTELEGGING', 'ANNET'])
 
 export const AnnenFravarArsakTypeSchema = z.enum([
     'GODKJENT_HELSEINSTITUSJON',
@@ -241,7 +234,6 @@ export const AktivitetSchema = z.discriminatedUnion('type', [
     AktivitetIkkeMuligSchema,
 ])
 
-
 export const AvsenderSystemSchema = z.object({
     navn: z.string(),
     versjon: z.string(),
@@ -258,4 +250,7 @@ export const SykmeldingBaseSchema = z.object({
     metadata: SykmeldingMetaSchema,
     pasient: PasientSchema,
     medisinskVurdering: MedisinskVurderingSchema,
-    aktivitet: z.array(AktivitetSchema),})
+    aktivitet: z.array(AktivitetSchema),
+})
+
+export type SykmeldingBaseType = z.infer<typeof SykmeldingBaseSchema>

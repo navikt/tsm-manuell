@@ -5,6 +5,7 @@ import { Button, TextField } from '@navikt/ds-react'
 
 import { hentOppgave } from '@/services/oppgaveService'
 import { ManuellOppgaveType } from '@/utils/data-layer/manuellOppgaveSchema'
+import { Oppgave } from '@/components/oppgave/Oppgave'
 
 /**
  * A component that lets the user input an oppgaveId and fetch it from the backend.
@@ -64,7 +65,8 @@ function OppgaveHenter(): ReactElement {
             {oppgaveData && (
                 <div style={{ marginTop: '1rem' }}>
                     <h3>Resultat:</h3>
-                    <pre style={{ background: '#f5f5f5', padding: '1rem' }}>{JSON.stringify(oppgaveData, null, 2)}</pre>
+                    <Oppgave oppgaveData={oppgaveData} />
+                    {/*<pre style={{ background: '#f5f5f5', padding: '1rem' }}>{JSON.stringify(oppgaveData, null, 2)}</pre>*/}
                 </div>
             )}
         </div>

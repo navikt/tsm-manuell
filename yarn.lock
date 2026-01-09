@@ -707,6 +707,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@navikt/aksel-icons@npm:^7.38.0":
+  version: 7.38.0
+  resolution: "@navikt/aksel-icons@npm:7.38.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Faksel-icons%2F7.38.0%2Ff21368acbac4d1e28604e774d0b95f50404da561"
+  checksum: 10c0/96251a5e2921c4261aa5565a72322bdba5d69563e8886dfddc1064a18120e102f621396948338940b96c1915c6905a076ab52782de3e4f51a2f1b7cb04e8a165
+  languageName: node
+  linkType: hard
+
 "@navikt/ds-css@npm:^7.37.0":
   version: 7.37.0
   resolution: "@navikt/ds-css@npm:7.37.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fds-css%2F7.37.0%2Fb0752aaf6a6ea970fedd2f6cdc0da93aa7b0c9fa"
@@ -4854,6 +4861,7 @@ __metadata:
   resolution: "tsm-manuell@workspace:."
   dependencies:
     "@limegrass/eslint-plugin-import-alias": "npm:^1.6.0"
+    "@navikt/aksel-icons": "npm:^7.38.0"
     "@navikt/ds-css": "npm:^7.37.0"
     "@navikt/ds-react": "npm:^7.37.0"
     "@navikt/ds-tailwind": "npm:^7.37.0"
@@ -4865,6 +4873,7 @@ __metadata:
     "@types/node": "npm:^24.10.4"
     "@types/react": "npm:^19.2.7"
     "@types/react-dom": "npm:^19.2.3"
+    date-fns: "npm:^4.1.0"
     eslint: "npm:^9.39.2"
     eslint-config-next: "npm:16.1.1"
     eslint-config-prettier: "npm:^10.1.8"
