@@ -34,6 +34,8 @@ spec:
   accessPolicy:
     outbound:
       rules:
+        - application: logging
+          namespace: nais-system
         - application: modiacontextholder
           namespace: personoversikt
         - application: tsm-manuell-api
