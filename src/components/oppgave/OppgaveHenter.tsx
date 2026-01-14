@@ -38,7 +38,7 @@ function OppgaveHenter(): ReactElement {
             const data = await hentOppgave(oppgaveId)
             setOppgaveData(data)
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Noe gikk galt')
+            setError(err instanceof Error ? err.message : 'Noko gjekk gale')
             setOppgaveData(null)
         } finally {
             setLoading(false)

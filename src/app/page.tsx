@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import { Heading } from '@navikt/ds-react'
 
 import OppgaveHenter from '@/components/oppgave/OppgaveHenter'
+import { UlosteOppgaverHenter } from '@/components/oppgave/UlosteOppgaverHenter'
 
 function Page(): ReactElement {
     return (
@@ -14,6 +15,10 @@ function Page(): ReactElement {
 
             <div>
                 <OppgaveHenter />
+            </div>
+
+            <div>
+                <UlosteOppgaverHenter />
             </div>
         </div>
     )
