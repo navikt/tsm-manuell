@@ -48,14 +48,14 @@ function OppgaveHenter(): ReactElement {
     return (
         <div>
             <TextField
-                label="Oppgave-ID"
+                label="Oppgåve-ID"
                 value={oppgaveId}
                 onChange={(e) => setOppgaveId(e.target.value)}
                 style={{ marginBottom: '1rem', maxWidth: '300px' }}
             />
 
             <Button onClick={handleHentOppgave} loading={loading}>
-                Hent oppgave
+                Hent oppgåve
             </Button>
 
             {/* Show error message if there is one */}

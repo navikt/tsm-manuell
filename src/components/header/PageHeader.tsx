@@ -1,7 +1,7 @@
 'use client'
 
 import React, { ReactElement } from 'react'
-import { InternalHeader } from '@navikt/ds-react'
+import { InternalHeader, Link } from '@navikt/ds-react'
 import { Select } from '@navikt/ds-react'
 
 import { useModiaContext } from '@/context/modiaContext'
@@ -10,9 +10,8 @@ function PageHeader(): ReactElement {
     const { modiaData, aktivEnhet, setAktivEnhet } = useModiaContext()
     return (
         <InternalHeader className="justify-between">
-            {/*TODO: add link when there is a page for "Uløste oppgaver"*/}
-            {/*<InternalHeader.Title as={Link} href="/oppgaver">*/}
-            <InternalHeader.Title>Tilbakedateringer</InternalHeader.Title>
+            <InternalHeader.Title as={Link} href="/">Tilbakedateringar</InternalHeader.Title>
+            <InternalHeader.Title as={Link} href="/oppgaver">Uløyste oppgåver</InternalHeader.Title>
             <div className="flex flex-wrap items-center">
                 {'errorType' in modiaData ? (
                     <InternalHeader.User name="Feil under lasting" description="Klarte ikke å laste enhet" />
