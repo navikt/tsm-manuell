@@ -17,3 +17,5 @@ export type AktivEnhet = z.infer<typeof AktivEnhetSchema>
 export const AktivEnhetSchema = z.object({
     aktivEnhet: z.string().nullable(),
 })
+
+export const NAV_EINING = 'X-Nav-enhet'

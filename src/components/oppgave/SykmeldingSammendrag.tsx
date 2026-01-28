@@ -1,3 +1,5 @@
+'use client'
+
 import { ReactElement } from 'react'
 import { BandageIcon } from '@navikt/aksel-icons'
 import { BodyShort, Detail, HelpText, InfoCard, Label } from '@navikt/ds-react'

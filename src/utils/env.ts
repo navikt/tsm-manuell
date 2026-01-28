@@ -7,9 +7,11 @@ const bundledEnvSchema = z.object({
         z.literal('dev'),
         z.literal('production'),
         z.literal('local'),
+        z.literal('test'),
     ]),
     NEXT_PUBLIC_MODIA_URL: z.string(),
     NEXT_PUBLIC_ASSET_PREFIX: z.string().optional(),
+    NEXT_PUBLIC_GOSYS_URL: z.string(),
 })
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>
@@ -28,6 +30,7 @@ export const bundledEnv = bundledEnvSchema.parse({
     NEXT_PUBLIC_RUNTIME_ENV: process.env.NEXT_PUBLIC_RUNTIME_ENV,
     NEXT_PUBLIC_MODIA_URL: process.env.NEXT_PUBLIC_MODIA_URL,
     NEXT_PUBLIC_ASSET_PREFIX: process.env.NEXT_PUBLIC_ASSET_PREFIX,
+    NEXT_PUBLIC_GOSYS_URL: process.env.NEXT_PUBLIC_GOSYS_URL,
 } satisfies Record<keyof BundledEnv, string | undefined>)
 
 const getRawServerConfig = (): Partial<unknown> =>

@@ -6,11 +6,11 @@ function NotFound(): ReactElement {
         <div className="container mx-auto p-8">
             <div className="p-8 max-w-prose">
                 <Heading size="large" spacing>
-                    Vi fant ikke denne siden
+                    Vi fann ikkje denne sida
                 </Heading>
                 <Alert variant="warning">
-                    Dersom du har fulgt en lenke hit, må du gjerne rapportere til oss hvor du fant den lenken så vi kan
-                    få fikset problemet.
+                    Om du har fulgt ei lenke her, må du gjerne rapportere til oss kvar du fann den lenken så vi kan
+                    løyse problemet.
                 </Alert>
             </div>
         </div>

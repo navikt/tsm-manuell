@@ -13,9 +13,9 @@ export default function Error({ error }: { error: Error & { digest?: string } })
         <div className="container mx-auto p-8">
             <div className="p-8 max-w-prose">
                 <Heading size="large" spacing>
-                    Noe gikk galt
+                    Noko gjekk gale
                 </Heading>
-                <Alert variant="error">Det oppsto dessverre en feil i baksystemet. Vennligst prøv igjen senere.</Alert>
+                <Alert variant="error">Det oppstod diverre ein feil i baksystemet. Vær venleg å prøv attende seinare.</Alert>
             </div>
         </div>
     )
