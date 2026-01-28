@@ -18,11 +18,14 @@ export function Oppgave({ oppgaveData }: Props): ReactElement {
             </div>
             <div>
                 <Label as="p">Arbeidsgiver</Label>
-                <BodyShort>PLACEHOLDER</BodyShort>
+                <BodyShort>{oppgaveData.sykmelding.arbeidsgiver.navn}</BodyShort>
             </div>
             <div>
                 <Label as="p">Sykmelder</Label>
-                <BodyShort>PLACEHOLDER</BodyShort>
+                <BodyShort>
+                    {oppgaveData.sykmelding.behandler.navn.fornavn} {oppgaveData.sykmelding.behandler.navn.mellomnavn}{' '}
+                    {oppgaveData.sykmelding.behandler.navn.etternavn}
+                </BodyShort>
             </div>
             <div>
                 <Label as="p">Datoen Nav mottok sykmeldingen:</Label>

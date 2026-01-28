@@ -245,12 +245,22 @@ export const SykmeldingMetaSchema = z.object({
     avsenderSystem: AvsenderSystemSchema,
 })
 
+export const TilbakedateringSchema = z.object({
+    kontaktDato: z.string().nullable(),
+    begrunnelse: z.string().nullable(),
+})
+
 export const SykmeldingBaseSchema = z.object({
     id: z.string(),
     metadata: SykmeldingMetaSchema,
     pasient: PasientSchema,
     medisinskVurdering: MedisinskVurderingSchema,
     aktivitet: z.array(AktivitetSchema),
+    arbeidsgiver: ArbeidsgiverInfoSchema,
+    sykmelder: SykmelderSchema,
+    behandler: BehandlerSchema,
+    tilbakedatering: TilbakedateringSchema.nullable(),
+
 })
 
 export type SykmeldingBaseType = z.infer<typeof SykmeldingBaseSchema>

@@ -62,10 +62,18 @@ export function SykmeldingSammendrag({ sykmelding }: { sykmelding: SykmeldingBas
                 {/*gul infoboks greie*/}
                 <div>
                     <Label as="p">11.1 Dato for dokumenterbar kontakt med pasienten</Label>
-                    <BodyShort>PLACEHOLDER</BodyShort>
+                    <BodyShort>
+                        {sykmelding.tilbakedatering?.kontaktDato
+                            ? format(new Date(sykmelding.tilbakedatering.kontaktDato), 'dd.MM.yyyy')
+                            : 'Kontaktdato ikkje satt'}
+                    </BodyShort>
 
                     <Label as="p">11.2 Begrunnelse for tilbakedateringen</Label>
-                    <BodyShort>PLACEHOLDER</BodyShort>
+                    <BodyShort>
+                        {sykmelding.tilbakedatering?.begrunnelse
+                            ? sykmelding.tilbakedatering.begrunnelse
+                            : 'Sjukmeldar har ikkje oppgjett begrunnelse'}
+                    </BodyShort>
 
                     <Label as="p">12.1 Dato pasienten oppsøkte behandleren</Label>
                     <BodyShort>PLACEHOLDER</BodyShort>
