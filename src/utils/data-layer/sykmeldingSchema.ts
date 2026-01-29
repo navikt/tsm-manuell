@@ -239,10 +239,18 @@ export const AvsenderSystemSchema = z.object({
     versjon: z.string(),
 })
 
-export const SykmeldingMetaSchema = z.object({
+export const SykmeldingMetadataSchemaBase = z.object({
     mottattDato: z.string(),
     genDate: z.string(),
     avsenderSystem: AvsenderSystemSchema,
+})
+
+export const DigitalSykmeldingMetaSchema = SykmeldingMetadataSchemaBase.extend({})
+
+export const SykmeldingMetadataSchema = SykmeldingMetadataSchemaBase.extend({
+    behandletTidspunkt: z.string(),
+    regelsettVersjon: z.string().nullable(),
+    strekkode: z.string().nullable(),
 })
 
 export const TilbakedateringSchema = z.object({
@@ -250,9 +258,16 @@ export const TilbakedateringSchema = z.object({
     begrunnelse: z.string().nullable(),
 })
 
+export const BistandNavSchema = z.object({
+    bistandUmiddelbart: z.boolean(),
+    beskrivBistand: z.string().nullable(),
+})
+
+export const SykmeldingTypeSchema = z.enum(['DIGITAL', 'XML'])
+
 export const SykmeldingBaseSchema = z.object({
     id: z.string(),
-    metadata: SykmeldingMetaSchema,
+    type: SykmeldingTypeSchema,
     pasient: PasientSchema,
     medisinskVurdering: MedisinskVurderingSchema,
     aktivitet: z.array(AktivitetSchema),
@@ -260,7 +275,60 @@ export const SykmeldingBaseSchema = z.object({
     sykmelder: SykmelderSchema,
     behandler: BehandlerSchema,
     tilbakedatering: TilbakedateringSchema.nullable(),
+    bistandNav: BistandNavSchema.nullable(),
+})
 
+export const SvarRestriksjonSchema = z.enum(['SKJERMET_FOR_ARBEIDSGIVER', 'SKJERMET_FOR_PASIENT', 'SKJERMET_FOR_NAV'])
+
+export const SporsmalSvarSchema = z.object({
+    sporsmal: z.string().nullable(),
+    svar: z.string(),
+    restriksjoner: z.array(SvarRestriksjonSchema),
+})
+
+export const TiltakSchema = z.object({
+    tiltakNav: z.string().nullable(),
+    andreTiltak: z.string().nullable(),
+})
+
+export const erIArbeidSchema = z.object({
+    type: z.literal('ER_I_ARBEID'),
+    egetArbeidPaSikt: z.boolean(),
+    annetArbeidPaSikt: z.boolean(),
+    arbeidFOM: z.string().nullable(), // ISO date string
+    vurderingsdato: z.string().nullable(),
+})
+
+export const erIkkeIArbeidSchema = z.object({
+    type: z.literal('ER_IKKE_I_ARBEID'),
+    arbeidsforPaSikt: z.boolean(),
+    arbeidsforFOM: z.string().nullable(),
+    vurderingsdato: z.string().nullable(),
+})
+
+export const IArbeidSchema = z.discriminatedUnion('type', [erIArbeidSchema, erIkkeIArbeidSchema])
+
+export const PrognoseSchema = z.object({
+    arbeidsforEtterPeriode: z.boolean(),
+    hensynArbeidsplassen: z.string().nullable(),
+    arbeid: IArbeidSchema.nullable(),
+})
+
+export const SykmeldingXMLSchema = SykmeldingBaseSchema.extend({
+    type: z.literal('XML'),
+    sykmeldingMetadata: SykmeldingMetadataSchema,
+    prognose: PrognoseSchema.nullable(),
+    tiltak: TiltakSchema.nullable(),
+    utdypendeOpplysninger: z.map(z.string(), z.map(z.string(), SporsmalSvarSchema)).nullable(),
+})
+
+export const DigitalSykmeldingSchema = SykmeldingBaseSchema.extend({
+    type: z.literal('DIGITAL'),
+    sykmeldingMetadata: DigitalSykmeldingMetaSchema,
 })
 
 export type SykmeldingBaseType = z.infer<typeof SykmeldingBaseSchema>
+
+export const SykmeldingSchema = z.discriminatedUnion('type', [SykmeldingXMLSchema, DigitalSykmeldingSchema])
+
+export type Sykmelding = z.infer<typeof SykmeldingSchema>
