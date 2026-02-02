@@ -1,11 +1,11 @@
 import { z } from 'zod'
 
-import { SykmeldingBaseSchema } from '@/utils/data-layer/sykmeldingSchema'
+import { SykmeldingSchema } from '@/utils/data-layer/sykmeldingSchema'
 
 export const ManuellOppgaveSchema = z.object({
     oppgaveId: z.number(),
     ident: z.string(),
-    sykmelding: SykmeldingBaseSchema,
+    sykmelding: SykmeldingSchema,
     ferdigstilt: z.boolean(),
     mottattDato: z.string(),
     status: z.string().nullable(),
