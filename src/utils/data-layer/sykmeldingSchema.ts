@@ -234,6 +234,8 @@ export const AktivitetSchema = z.discriminatedUnion('type', [
     AktivitetIkkeMuligSchema,
 ])
 
+export type AktivitetType = z.infer<typeof AktivitetSchema>
+
 export const AvsenderSystemSchema = z.object({
     navn: z.string(),
     versjon: z.string(),
@@ -316,7 +318,7 @@ export const PrognoseSchema = z.object({
 
 export const SykmeldingXMLSchema = SykmeldingBaseSchema.extend({
     type: z.literal('XML'),
-    sykmeldingMetadata: SykmeldingMetadataSchema,
+    metadata: SykmeldingMetadataSchema,
     prognose: PrognoseSchema.nullable(),
     tiltak: TiltakSchema.nullable(),
     utdypendeOpplysninger: z.map(z.string(), z.map(z.string(), SporsmalSvarSchema)).nullable(),
@@ -324,7 +326,7 @@ export const SykmeldingXMLSchema = SykmeldingBaseSchema.extend({
 
 export const DigitalSykmeldingSchema = SykmeldingBaseSchema.extend({
     type: z.literal('DIGITAL'),
-    sykmeldingMetadata: DigitalSykmeldingMetaSchema,
+    metadata: DigitalSykmeldingMetaSchema,
 })
 
 export type SykmeldingBaseType = z.infer<typeof SykmeldingBaseSchema>

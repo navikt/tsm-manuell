@@ -38,7 +38,7 @@ export function ManuellVurderingSender({ oppgaveId }: Props): ReactElement {
         }
 
         try {
-            await sendManuellVurdering(oppgaveId, { status: vurdering, merknad: null }, aktivEnhet)
+            await sendManuellVurdering(oppgaveId, { status: vurdering}, aktivEnhet)
             router.push('/kvittering')
         } catch (err) {
             setError(err instanceof Error ? err.message : 'Noko gjekk gale')
