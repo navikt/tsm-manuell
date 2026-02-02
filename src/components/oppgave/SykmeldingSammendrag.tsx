@@ -5,9 +5,9 @@ import { BandageIcon } from '@navikt/aksel-icons'
 import { BodyShort, Detail, HelpText, InfoCard, Label } from '@navikt/ds-react'
 import { differenceInDays, format } from 'date-fns'
 
-import { SykmeldingBaseType } from '@/utils/data-layer/sykmeldingSchema'
+import { Sykmelding, SykmeldingBaseType } from '@/utils/data-layer/sykmeldingSchema'
 
-export function SykmeldingSammendrag({ sykmelding }: { sykmelding: SykmeldingBaseType }): ReactElement {
+export function SykmeldingSammendrag({ sykmelding }: { sykmelding: Sykmelding }): ReactElement {
     const { medisinskVurdering } = sykmelding
     return (
         <InfoCard data-color="info">
@@ -76,13 +76,17 @@ export function SykmeldingSammendrag({ sykmelding }: { sykmelding: SykmeldingBas
                     </BodyShort>
 
                     <Label as="p">12.1 Dato pasienten oppsøkte behandleren</Label>
-                    <BodyShort>PLACEHOLDER</BodyShort>
+                    <BodyShort>
+                        {sykmelding.type === 'XML'
+                            ? sykmelding.sykmeldingMetadata.behandletTidspunkt
+                            : 'Digitale sykmeldinger støtter ikke behandlet tidspunkt..'}
+                    </BodyShort>
 
                     <Label as="p">Startdato for sykmeldingen (første fom. i perioden)</Label>
                     <BodyShort>PLACEHOLDER</BodyShort>
 
                     <Label as="p">Dato sykmeldingen ble generert</Label>
-                    <BodyShort> {format(new Date(sykmelding.metadata.genDate), 'dd.MM.yyyy')}</BodyShort>
+                    <BodyShort> {format(new Date(sykmelding.sykmeldingMetadata.genDate), 'dd.MM.yyyy')}</BodyShort>
 
                     <Label as="p">Antall dager tilbakedatert</Label>
                     <BodyShort>PLACEHOLDER</BodyShort>
