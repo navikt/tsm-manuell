@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 />
                 <title>TSM manuell</title>
             </head>
-            <body className="bg-bg-subtle">
+            <body className="bg-ax-bg-neutral-soft">
                 <Providers modiaContext={modiaContext}>
                     <PageHeader />
                     <main className="mx-auto min-h-screen max-w-3xl bg-white p-8">
