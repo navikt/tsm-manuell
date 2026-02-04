@@ -1084,14 +1084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navikt/aksel-icons@npm:^7.38.0":
-  version: 7.38.0
-  resolution: "@navikt/aksel-icons@npm:7.38.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Faksel-icons%2F7.38.0%2Ff21368acbac4d1e28604e774d0b95f50404da561"
-  checksum: 10c0/96251a5e2921c4261aa5565a72322bdba5d69563e8886dfddc1064a18120e102f621396948338940b96c1915c6905a076ab52782de3e4f51a2f1b7cb04e8a165
-  languageName: node
-  linkType: hard
-
-"@navikt/aksel-icons@npm:^8.2.2":
+"@navikt/aksel-icons@npm:^8.2.1, @navikt/aksel-icons@npm:^8.2.2":
   version: 8.2.2
   resolution: "@navikt/aksel-icons@npm:8.2.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Faksel-icons%2F8.2.2%2F1faa9eded50736d7c382132852b540eebd2b8dcf"
   checksum: 10c0/8bf4cef113140be1bf4a47165643b00914c7cc40e8d99c1ac1c75940eda4ed525a1388dfc8ff77a5f5cfcda0a17709b0273459b2629c4d91b2483a4e49e2e15b
@@ -5981,7 +5974,7 @@ __metadata:
   dependencies:
     "@limegrass/eslint-plugin-import-alias": "npm:^1.6.0"
     "@navikt/aksel": "npm:^8.2.0"
-    "@navikt/aksel-icons": "npm:^7.38.0"
+    "@navikt/aksel-icons": "npm:^8.2.1"
     "@navikt/ds-css": "npm:^8.2.1"
     "@navikt/ds-react": "npm:^8.2.1"
     "@navikt/ds-tailwind": "npm:^8.2.1"
