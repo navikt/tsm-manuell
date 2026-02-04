@@ -14,7 +14,7 @@
         "lint": "eslint src"
     },
     "dependencies": {
-        "@navikt/aksel-icons": "^7.38.0",
+        "@navikt/aksel-icons": "^8.2.2",
         "@navikt/ds-css": "^8.2.1",
         "@navikt/ds-react": "^8.2.1",
         "@navikt/ds-tailwind": "^8.2.1",
@@ -33,7 +33,7 @@
     },
     "devDependencies": {
         "@limegrass/eslint-plugin-import-alias": "^1.6.0",
-        "@navikt/aksel": "^8.2.0",
+        "@navikt/aksel": "^8.2.2",
         "@navikt/tsm-eslint-react": "^1.0.0",
         "@navikt/tsm-prettier": "^2.0.0",
         "@tailwindcss/postcss": "^4.1.18",
