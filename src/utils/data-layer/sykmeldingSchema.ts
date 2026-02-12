@@ -321,7 +321,7 @@ export const SykmeldingXMLSchema = SykmeldingBaseSchema.extend({
     metadata: SykmeldingMetadataSchema,
     prognose: PrognoseSchema.nullable(),
     tiltak: TiltakSchema.nullable(),
-    utdypendeOpplysninger: z.map(z.string(), z.map(z.string(), SporsmalSvarSchema)).nullable(),
+    utdypendeOpplysninger: z.record(z.string(), z.record(z.string(), SporsmalSvarSchema)).nullable(),
 })
 
 export const DigitalSykmeldingSchema = SykmeldingBaseSchema.extend({
