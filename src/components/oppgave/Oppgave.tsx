@@ -32,7 +32,6 @@ export function Oppgave({ oppgaveData }: Props): ReactElement {
                 <BodyShort>{format(new Date(oppgaveData.mottattDato), 'dd.MM.yyyy hh:mm:ss')}</BodyShort>
             </div>
             <SykmeldingSammendrag sykmelding={oppgaveData.sykmelding} />
-            <pre style={{ background: '#f5f5f5', padding: '1rem' }}>{JSON.stringify(oppgaveData, null, 2)}</pre>
         </div>
     )
 }

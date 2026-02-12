@@ -6,6 +6,7 @@ import { Button, TextField } from '@navikt/ds-react'
 import { hentOppgave } from '@/services/oppgaveService'
 import { ManuellOppgaveType } from '@/utils/data-layer/manuellOppgaveSchema'
 import { Oppgave } from '@/components/oppgave/Oppgave'
+import { SykmeldingDetaljer } from '@/components/oppgave/SykmeldingDetaljer'
 import { ManuellVurderingSender } from '@/components/manuellVurdering/ManuellVurderingSender'
 
 /**
@@ -66,8 +67,9 @@ function OppgaveHenter(): ReactElement {
             {oppgaveData && (
                 <div style={{ marginTop: '1rem' }}>
                     <h3>Resultat:</h3>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 flex-col">
                         <Oppgave oppgaveData={oppgaveData} />
+                        <SykmeldingDetaljer sykmelding={oppgaveData.sykmelding} />
                         <ManuellVurderingSender oppgaveId={oppgaveData.oppgaveId.toString()} />
 
                     </div>
