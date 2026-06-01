@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
     experimental: {
         optimizePackageImports: ['@navikt/ds-react'],
     },
+    redirects: async () => [
+        {
+            source: '/',
+            destination: '/:oppgaveId',
+            has: [{ type: 'query', key: 'oppgaveid', value: '(?<oppgaveId>.*)' }],
+            permanent: true,
+        },
+    ],
 }
 
 export default nextConfig

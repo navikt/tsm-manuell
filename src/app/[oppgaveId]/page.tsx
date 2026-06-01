@@ -1,23 +1,13 @@
 import { ReactElement, Suspense } from 'react'
 import { notFound } from 'next/navigation'
-import { Alert, BodyShort, Heading, Skeleton } from '@navikt/ds-react'
+import { Skeleton } from '@navikt/ds-react'
 
-import { getOppgave } from '../services/syfosmmanuell-backend-service'
-import ManuellOppgaveErrors from '../components/ManuellOppgaveErrors'
-import MainContent from '../components/MainContent'
+import { getOppgave } from '../../services/syfosmmanuell-backend-service'
+import ManuellOppgaveErrors from '../../components/ManuellOppgaveErrors'
+import MainContent from '../../components/MainContent'
 
-async function Page(props: { searchParams: Promise<{ oppgaveid: string | undefined }> }): Promise<ReactElement> {
-    const searchParams = await props.searchParams
-    if (searchParams.oppgaveid == null) {
-        return (
-            <Alert variant="error">
-                <Heading size="medium" spacing>
-                    Mangler oppgave
-                </Heading>
-                <BodyShort>Dersom du kom hit via Gosys. Prøv igjen.</BodyShort>
-            </Alert>
-        )
-    }
+async function Page({ params }: PageProps<'/[oppgaveId]'>): Promise<ReactElement> {
+    const oppgaveId = (await params).oppgaveId
 
     return (
         <Suspense
@@ -42,7 +32,7 @@ async function Page(props: { searchParams: Promise<{ oppgaveid: string | undefin
                 </div>
             }
         >
-            <Oppgave oppgaveId={searchParams.oppgaveid} />
+            <Oppgave oppgaveId={oppgaveId} />
         </Suspense>
     )
 }
