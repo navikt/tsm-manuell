@@ -4,14 +4,14 @@ import React, { ReactElement, useEffect } from 'react'
 import { logger } from '@navikt/next-logger'
 import { Alert, BodyShort } from '@navikt/ds-react'
 
-import { browserEnv, isLocalOrDemo } from '../../utils/env'
+import { browserEnv, isLocalOrDemo } from '../../../../utils/env'
 
 function Page(): ReactElement {
     useEffect(() => {
         if (isLocalOrDemo) {
             logger.warn('In demo, redirecting back to dummy oppgave')
             setTimeout(() => {
-                window.location.href = '/?oppgaveid=123456'
+                window.location.href = '/oppgave/123456'
             }, 2000)
             return
         }

@@ -2,11 +2,11 @@ import { ReactElement, Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import { Skeleton } from '@navikt/ds-react'
 
-import { getOppgave } from '../../services/syfosmmanuell-backend-service'
-import ManuellOppgaveErrors from '../../components/ManuellOppgaveErrors'
-import MainContent from '../../components/MainContent'
+import { getOppgave } from '../../../services/syfosmmanuell-backend-service'
+import ManuellOppgaveErrors from '../../../components/ManuellOppgaveErrors'
+import MainContent from '../../../components/MainContent'
 
-async function Page({ params }: PageProps<'/[oppgaveId]'>): Promise<ReactElement> {
+async function Page({ params }: PageProps<'/oppgave/[oppgaveId]'>): Promise<ReactElement> {
     const oppgaveId = (await params).oppgaveId
 
     return (
