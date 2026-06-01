@@ -2,6 +2,8 @@
 
 Saksbehandlerfrontend for manuell behandling av tilbakedaterte sykemeldinger. Tillater saksbehandler å `godkjenne` eller `godkjenne med merknad`. Merknader som vises for bruker sluttbruker.
 
+Brukere i produksjon blir sendt til appen vår gjennom https://sykmelding-redirect.intern.nav.no/smm?oppgaveid=<oppgave-id> fra Gosys. Denne [ingressen er eid av syk-dig](https://github.com/navikt/syk-dig/blob/main/.nais/redirect-prod.yaml).
+
 Applikasjonen er en NextJS app med API routes for data fetching og lagring.
 - Frontenden rendres og prepopuleres med en sykmelding som skal behandles (SSR).
 - Dataen er fetched fra modiacontextholder og syfosmmanuell-backend. For hver av disse veksles inn i en token spesifikt for tjenesten som skal prates med.
