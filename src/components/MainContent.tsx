@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import { ManuellOppgave } from '../types/manuellOppgave'
 import { StoreContext } from '../data/store'
 import { tilLesbarSykmelder } from '../utils/tekstUtils'
+import { manuellOppgave } from '../mock/manuellOppgave'
 
 import Sykmeldingheader from './sykmelding/SykmeldingHeader'
 import HeleSykmeldingen from './sykmelding/sykmeldingvarianter/HeleSykmeldingen'
@@ -36,7 +37,7 @@ const MainContent = ({ manuellOppgave: { oppgaveid, sykmelding, personNrPasient,
             startTransition(async () => {
                 try {
                     await submitOppgaveAction(oppgaveid, aktivEnhet, formState)
-                    router.push('/kvittering')
+                    router.push(`/oppgave/${manuellOppgave.oppgaveid}/kvittering`, { scroll: true })
                 } catch (e) {
                     logger.error(new Error('Vurdering av oppgave feilet', { cause: e }))
                     setError('Kunne ikke vurdere oppgave. Prøv igjen senere.')

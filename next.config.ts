@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     redirects: async () => [
         {
             source: '/',
-            destination: '/:oppgaveId',
+            destination: '/oppgave/:oppgaveId',
             has: [{ type: 'query', key: 'oppgaveid', value: '(?<oppgaveId>.*)' }],
             permanent: true,
         },
