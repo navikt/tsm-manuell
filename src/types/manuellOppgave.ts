@@ -10,6 +10,7 @@ export const ManuellOppgave = z.object({
     mottattDato: DateString,
     personNrPasient: z.string(),
     validationResult: ValidationResult,
+    tildeltEnhetsnr: z.string().nullable(),
 })
 
 export type ManuellOppgave = z.infer<typeof ManuellOppgave>

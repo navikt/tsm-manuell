@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useContext, useState, useTransition } from 'react'
+import React, { useCallback, useContext, useEffect, useRef, useState, useTransition } from 'react'
 import { logger } from '@navikt/next-logger'
 import { Alert, BodyShort, Button } from '@navikt/ds-react'
 import { useRouter } from 'next/navigation'
@@ -20,11 +20,20 @@ interface MainContentProps {
     manuellOppgave: ManuellOppgave
 }
 
-const MainContent = ({ manuellOppgave: { oppgaveid, sykmelding, personNrPasient, mottattDato } }: MainContentProps) => {
+const MainContent = ({
+    manuellOppgave: { oppgaveid, sykmelding, personNrPasient, mottattDato, tildeltEnhetsnr },
+}: MainContentProps) => {
     const router = useRouter()
-    const { aktivEnhet } = useContext(StoreContext)
+    const { aktivEnhet, setAktivEnhet } = useContext(StoreContext)
     const [visHeleSykmeldingen, setVisHeleSykmeldingen] = useState(false)
     const [error, setError] = useState<string | null>(null)
+
+    const initialTildeltEnhet = useRef(tildeltEnhetsnr)
+    useEffect(() => {
+        if (initialTildeltEnhet.current != null) {
+            setAktivEnhet(initialTildeltEnhet.current)
+        }
+    }, [setAktivEnhet])
 
     const [isPending, startTransition] = useTransition()
     const handleSubmit = useCallback(
