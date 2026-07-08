@@ -23,8 +23,8 @@ function Tilbakedateringsinfo({
     const tilbakedatertDuration = daysBetweenDates(fom, genereringsDato)
 
     return (
-        <div className="bg-surface-warning-subtle p-8">
-            <div className="mb-8 border-b border-border-divider pb-8">
+        <div className="bg-ax-bg-warning-soft p-8">
+            <div className="mb-8 border-b border-ax-border-neutral-subtle pb-8">
                 <ElementMedTekst
                     vis={!!kontaktDato}
                     tittel="11.1 Dato for dokumenterbar kontakt med pasienten"

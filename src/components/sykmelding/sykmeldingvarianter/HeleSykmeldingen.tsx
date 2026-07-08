@@ -24,7 +24,7 @@ interface HeleSykmeldingenProps {
 const HeleSykmeldingen = ({ sykmelding, setVisHeleSykmeldingen }: HeleSykmeldingenProps) => {
     return (
         <div className="p-4">
-            <div className="border-b border-border-divider">
+            <div className="border-b border-ax-border-neutral-subtle">
                 <ElementMedTekst
                     vis={!!sykmelding.signaturDato}
                     tittel="Datoen sykmeldingen ble skrevet"

@@ -34,7 +34,7 @@ const EnkelCheckbox = ({ tittel, checked, margin, innrykk, bold, vis = true, lis
                 </span>
                 <span>
                     {bold ? (
-                        <BodyShort id={labelId} className="font-bold">
+                        <BodyShort id={labelId} className="font-ax-bold">
                             {tittel}
                         </BodyShort>
                     ) : (

@@ -1,5 +1,6 @@
 export const manuellOppgave = {
     oppgaveid: 123456,
+    tildeltEnhetsnr: '0314',
     validationResult: {
         status: 'MANUAL_PROCESSING',
         ruleHits: [
