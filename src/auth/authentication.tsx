@@ -1,6 +1,6 @@
-import { headers } from 'next/headers'
 import { logger } from '@navikt/next-logger'
 import { getToken, validateToken } from '@navikt/oasis'
+import { headers } from 'next/headers'
 
 type VerifiedAccessTokenResult =
     | { ok: false; errorType: 'AUTH_ERROR'; message: string }

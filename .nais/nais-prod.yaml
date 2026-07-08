@@ -8,7 +8,6 @@ metadata:
   annotations:
     nais.io/read-only-file-system: 'false'
 spec:
-  image: {{image}}
   replicas:
     min: 2
     max: 4
@@ -40,8 +39,8 @@ spec:
       tenant: nav.no
       claims:
         groups:
-            # 0000-GA-SYFO-SENSITIV geografisk tilgang til sykmeldinger
-          - id: "100e88eb-79af-4136-8bfe-f79b32021f43"
+          # 0000-GA-SYFO-SENSITIV geografisk tilgang til sykmeldinger
+          - id: '100e88eb-79af-4136-8bfe-f79b32021f43'
     sidecar:
       enabled: true
       autoLogin: true

@@ -18,6 +18,6 @@ export const periodeUndertekst = (periode: Periode): string => {
     }
 }
 
-export const tilLesbarSykmelder = (behandler: Behandler) => {
+export const tilLesbarSykmelder = (behandler: Behandler): string => {
     return `${behandler.fornavn}${behandler.mellomnavn ? ` ${behandler.mellomnavn}` : ''} ${behandler.etternavn}`
 }

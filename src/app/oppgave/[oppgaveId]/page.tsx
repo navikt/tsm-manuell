@@ -1,10 +1,10 @@
-import { ReactElement, Suspense } from 'react'
-import { notFound } from 'next/navigation'
 import { Skeleton } from '@navikt/ds-react'
+import { notFound } from 'next/navigation'
+import { ReactElement, Suspense } from 'react'
 
-import { getOppgave } from '../../../services/syfosmmanuell-backend-service'
-import ManuellOppgaveErrors from '../../../components/ManuellOppgaveErrors'
 import MainContent from '../../../components/MainContent'
+import ManuellOppgaveErrors from '../../../components/ManuellOppgaveErrors'
+import { getOppgave } from '../../../services/syfosmmanuell-backend-service'
 
 async function Page({ params }: PageProps<'/oppgave/[oppgaveId]'>): Promise<ReactElement> {
     const oppgaveId = (await params).oppgaveId
@@ -37,7 +37,7 @@ async function Page({ params }: PageProps<'/oppgave/[oppgaveId]'>): Promise<Reac
     )
 }
 
-async function Oppgave({ oppgaveId }: { oppgaveId: string }) {
+async function Oppgave({ oppgaveId }: { oppgaveId: string }): Promise<ReactElement> {
     const oppgave = await getOppgave(oppgaveId)
 
     if ('errorType' in oppgave && oppgave.errorType === 'OPPGAVE_NOT_FOUND') {

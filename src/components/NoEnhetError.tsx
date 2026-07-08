@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import { BodyShort, Heading } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 const NoEnhetError = (): ReactElement => {
     return (

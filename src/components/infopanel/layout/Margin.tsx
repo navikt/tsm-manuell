@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
 interface MarginProps {
     children: ReactNode
@@ -6,7 +6,7 @@ interface MarginProps {
     stor?: boolean
 }
 
-const Margin = ({ children, liten, stor }: MarginProps) => {
+const Margin = ({ children, liten, stor }: MarginProps): ReactElement | null => {
     if (!children) {
         return null
     }

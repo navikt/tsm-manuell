@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
-import Image from 'next/image'
 import { BodyShort } from '@navikt/ds-react'
+import Image from 'next/image'
+import React, { ReactElement } from 'react'
 
 import sjekkboks from '../../../svg/sjekkboks.svg'
 import sjekkboksKryss from '../../../svg/sjekkboksKryss.svg'
@@ -19,7 +19,15 @@ interface EnkelCheckboxProps {
     listItems?: string[]
 }
 
-const EnkelCheckbox = ({ tittel, checked, margin, innrykk, bold, vis = true, listItems }: EnkelCheckboxProps) => {
+const EnkelCheckbox = ({
+    tittel,
+    checked,
+    margin,
+    innrykk,
+    bold,
+    vis = true,
+    listItems,
+}: EnkelCheckboxProps): ReactElement | null => {
     if (!vis) {
         return null
     }

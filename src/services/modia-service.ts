@@ -1,10 +1,10 @@
-import * as z from 'zod'
 import { logger } from '@navikt/next-logger'
 import { requestOboToken } from '@navikt/oasis'
+import * as z from 'zod'
 
-import { ClientError } from '../utils/typeUtils'
-import { getServerEnv, isLocalOrDemo } from '../utils/env'
 import { verifiedAccessToken } from '../auth/authentication'
+import { getServerEnv, isLocalOrDemo } from '../utils/env'
+import { ClientError } from '../utils/typeUtils'
 
 export interface ModiaContext {
     fornavn: string

@@ -25,18 +25,18 @@ export const tilLesbarPeriodeMedArstall = (fomString: string, tomString: string)
     return `${tilLesbarDatoMedArstall(fomString)} - ${tilLesbarDatoMedArstall(tomString)}`
 }
 
-export const tilLesbarDatoMedArstall = (datoArg?: string | null) => {
+export const tilLesbarDatoMedArstall = (datoArg?: string | null): string | undefined => {
     if (!datoArg) {
         return undefined
     }
     return dayjs(datoArg).format('DD. MMMM YYYY')
 }
 
-export const tilLesbarDatoUtenAarstall = (datoArg: string) => {
+export const tilLesbarDatoUtenAarstall = (datoArg: string): string => {
     return dayjs(datoArg).format('DD. MMMM')
 }
 
-export const countDaysBetweenTwoDatesIncludingFom = (fra?: string, til?: string) => {
+export const countDaysBetweenTwoDatesIncludingFom = (fra?: string, til?: string): number | undefined => {
     if (!fra || !til) {
         return undefined
     }

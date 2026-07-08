@@ -1,8 +1,8 @@
 'use client'
 
-import { ReactElement, useMemo, useState } from 'react'
 import { Button, Chips, Heading, LinkPanel, Tag } from '@navikt/ds-react'
 import Link from 'next/link'
+import { ReactElement, useMemo, useState } from 'react'
 
 import { UlostOppgave } from '../../types/ulost-oppgave'
 import { daysBetweenDates, tilLesbarDatoMedArstall } from '../../utils/datoUtils'
@@ -79,7 +79,7 @@ function Oppgaver({ oppgaver }: Props): ReactElement {
     )
 }
 
-function OppgaveLinkPanel({ oppgave }: { oppgave: UlostOppgave }) {
+function OppgaveLinkPanel({ oppgave }: { oppgave: UlostOppgave }): ReactElement {
     const currentDate = new Date().toISOString()
     const diffInDays = daysBetweenDates(oppgave.mottattDato, currentDate)
 
@@ -102,7 +102,7 @@ function OppgaveLinkPanel({ oppgave }: { oppgave: UlostOppgave }) {
     )
 }
 
-function UlostOppgaveTag({ oppgave }: { oppgave: UlostOppgave }) {
+function UlostOppgaveTag({ oppgave }: { oppgave: UlostOppgave }): ReactElement {
     const statusText = getFilterText(oppgave.status)
     switch (oppgave.status) {
         case 'FEILREGISTRERT':

@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
-import ElementMedTekst from '../layout/ElementMedTekst'
 import { Arbeidsgiver, HarArbeidsgiverValues } from '../../../types/sykmelding'
+import ElementMedTekst from '../layout/ElementMedTekst'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface ArbeidsgiverSectionProps {
     arbeidsgiver: Arbeidsgiver

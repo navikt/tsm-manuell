@@ -1,8 +1,8 @@
 'use client'
 
-import React, { ReactElement, useEffect } from 'react'
-import { logger } from '@navikt/next-logger'
 import { Alert, BodyShort } from '@navikt/ds-react'
+import { logger } from '@navikt/next-logger'
+import React, { ReactElement, useEffect } from 'react'
 
 import { browserEnv, isLocalOrDemo } from '../../../../utils/env'
 

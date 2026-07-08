@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import EtikettMedTekst from '../../layout/EtikettMedTekst'
 import { Diagnose } from '../../../../types/sykmelding'
+import EtikettMedTekst from '../../layout/EtikettMedTekst'
 
 import DiagnoseKodeSeksjon from './DiagnoseKodeSeksjon'
 
@@ -11,7 +11,11 @@ interface DiagnoseSeksjonProps {
     withPrefix?: boolean
 }
 
-function DiagnoseSeksjon({ diagnose: { tekst, kode, system }, bidiagnose, withPrefix = false }: DiagnoseSeksjonProps) {
+function DiagnoseSeksjon({
+    diagnose: { tekst, kode, system },
+    bidiagnose,
+    withPrefix = false,
+}: DiagnoseSeksjonProps): ReactElement {
     return (
         <div className="flex flex-wrap mb-4">
             <EtikettMedTekst

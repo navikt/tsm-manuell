@@ -1,18 +1,18 @@
-import React from 'react'
-import {  Heading } from '@navikt/ds-react'
+import { Heading } from '@navikt/ds-react'
 import Image from 'next/image'
+import React, { ReactElement } from 'react'
 
+import plaster from '../../../svg/plaster.svg'
+import { Sykmelding } from '../../../types/sykmelding'
 import DiagnoseSeksjon from '../../infopanel/panelelementer/diagnose/DiagnoseSeksjon'
 import SykmeldingPerioder from '../../infopanel/panelelementer/periode/SykmeldingPerioder'
 import Tilbakedateringsinfo from '../../infopanel/utdypendeelementer/Tilbakedateringsinfo'
-import { Sykmelding } from '../../../types/sykmelding'
-import plaster from '../../../svg/plaster.svg'
 
 interface TilbakedatertForlengelseProps {
     sykmelding: Sykmelding
 }
 
-const TilbakedatertForlengelse = ({ sykmelding }: TilbakedatertForlengelseProps) => {
+const TilbakedatertForlengelse = ({ sykmelding }: TilbakedatertForlengelseProps): ReactElement => {
     return (
         <div className="p-4 border border-ax-border-neutral relative">
             <div className="absolute left-0 top-0 flex h-12 w-full items-center gap-3 border-b border-ax-border-neutral bg-ax-bg-warning-moderate p-4">

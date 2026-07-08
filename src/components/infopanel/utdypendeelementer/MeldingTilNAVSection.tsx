@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
-import ElementMedTekst from '../layout/ElementMedTekst'
-import Margin from '../layout/Margin'
-import EnkelCheckbox from '../layout/EnkelCheckbox'
 import { MeldingTilNAV } from '../../../types/sykmelding'
+import ElementMedTekst from '../layout/ElementMedTekst'
+import EnkelCheckbox from '../layout/EnkelCheckbox'
+import Margin from '../layout/Margin'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface MeldingTilNAVSectionProps {
     meldingTilNAV: MeldingTilNAV

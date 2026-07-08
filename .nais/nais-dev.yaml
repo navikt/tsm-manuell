@@ -6,7 +6,6 @@ metadata:
   labels:
     team: teamsykmelding
 spec:
-  image: {{image}}
   replicas:
     min: 1
     max: 2
@@ -37,7 +36,7 @@ spec:
       claims:
         groups:
           # 0000-GA-SYFO-SENSITIV geografisk tilgang til sykmeldinger
-          - id: "c8957e0a-909c-4b62-8e11-93aae6d295e6"
+          - id: 'c8957e0a-909c-4b62-8e11-93aae6d295e6'
     sidecar:
       enabled: true
       autoLogin: true

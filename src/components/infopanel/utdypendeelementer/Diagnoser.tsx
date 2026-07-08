@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import { Heading } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 import { AnnenFraverGrunnValues, MedisinskVurdering } from '../../../types/sykmelding'
 import { tilLesbarDatoMedArstall } from '../../../utils/datoUtils'

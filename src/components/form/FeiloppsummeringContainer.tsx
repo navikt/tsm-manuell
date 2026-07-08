@@ -1,6 +1,6 @@
+import { ErrorSummary } from '@navikt/ds-react'
 import { ReactElement, useEffect, useRef } from 'react'
 import { FormState } from 'react-hook-form'
-import { ErrorSummary } from '@navikt/ds-react'
 
 import { FormShape } from './Form'
 

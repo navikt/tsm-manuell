@@ -1,8 +1,8 @@
 import * as z from 'zod'
 
+import { DateString } from './shared'
 import { Sykmelding } from './sykmelding'
 import { ValidationResult } from './validationResult'
-import { DateString } from './shared'
 
 export const ManuellOppgave = z.object({
     oppgaveid: z.number(),

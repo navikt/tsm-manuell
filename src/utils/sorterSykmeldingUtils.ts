@@ -2,7 +2,7 @@ import dayjs from 'dayjs'
 
 import { Periode } from '../types/sykmelding'
 
-export function sorterPerioderEldsteFoerst(perioder: Periode[]) {
+export function sorterPerioderEldsteFoerst(perioder: Periode[]): Periode[] {
     return perioder.sort(({ fom }, { tom }) => {
         if (dayjs(fom).isBefore(tom)) {
             return -1

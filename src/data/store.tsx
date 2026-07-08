@@ -1,4 +1,4 @@
-import React, { createContext, PropsWithChildren, useCallback, useState } from 'react'
+import React, { createContext, PropsWithChildren, ReactElement, useCallback, useState } from 'react'
 
 import { ModiaContext, ModiaContextError } from '../services/modia-service'
 
@@ -16,7 +16,7 @@ type StoreProviderProps = {
     modiaContext?: ModiaContext | ModiaContextError
 }
 
-const StoreProvider = ({ children, modiaContext }: PropsWithChildren<StoreProviderProps>) => {
+const StoreProvider = ({ children, modiaContext }: PropsWithChildren<StoreProviderProps>): ReactElement => {
     const defaultAktivSelectValue = getDefaultSelectValue(modiaContext)
     const [aktivEnhet, setAktivEnhet] = useState<string | null>(defaultAktivSelectValue)
 
