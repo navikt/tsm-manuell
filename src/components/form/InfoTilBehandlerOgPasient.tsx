@@ -1,5 +1,5 @@
-import React from 'react'
 import { BodyLong, ExpansionCard, Heading } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 import { Status } from './Form'
 
@@ -18,7 +18,7 @@ interface InfoTilBehandlerOgPasientProps {
     type: Status
 }
 
-const InfoTilBehandlerOgPasient = ({ type }: InfoTilBehandlerOgPasientProps) => {
+const InfoTilBehandlerOgPasient = ({ type }: InfoTilBehandlerOgPasientProps): ReactElement | null => {
     if (!type || type === 'GODKJENT') return null
 
     return (

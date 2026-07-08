@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
 import { BodyShort, Detail, Heading } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 import { cleanId } from '../../../utils/uu'
 
@@ -8,14 +8,21 @@ import Margin from './Margin'
 
 interface EtikettMedTekstProps {
     tittel: string
-    tekst?: string | ReactNode
+    tekst?: string
     undertekst?: string
     margin?: boolean
     innrykk?: boolean
     headingLevel?: '1' | '2' | '3' | '4' | '5' | '6'
 }
 
-const EtikettMedTekst = ({ tittel, tekst, undertekst, margin, innrykk, headingLevel = '3' }: EtikettMedTekstProps) => {
+const EtikettMedTekst = ({
+    tittel,
+    tekst,
+    undertekst,
+    margin,
+    innrykk,
+    headingLevel = '3',
+}: EtikettMedTekstProps): ReactElement => {
     const labelId = cleanId(tekst + '-etikett-' + headingLevel)
     const innhold = (
         <div>

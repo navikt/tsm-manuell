@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 import ElementMedTekst from '../layout/ElementMedTekst'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface MeldingTilArbeidsgiverSectionProps {
     meldingTilArbeidsgiver: string

@@ -1,5 +1,6 @@
-import { useForm, Controller } from 'react-hook-form'
 import { Button, Radio, RadioGroup } from '@navikt/ds-react'
+import { ReactElement } from 'react'
+import { useForm, Controller } from 'react-hook-form'
 
 import { browserEnv } from '../../utils/env'
 
@@ -21,7 +22,7 @@ export interface FormShape {
     status: Status
 }
 
-const Form = ({ onSubmit, submitting }: Props) => {
+const Form = ({ onSubmit, submitting }: Props): ReactElement => {
     const { control, handleSubmit, formState, watch } = useForm<FormShape>()
     const watchStatus = watch('status')
 

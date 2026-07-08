@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
-import { sorterPerioderEldsteFoerst } from '../../../../utils/sorterSykmeldingUtils'
 import { Periode } from '../../../../types/sykmelding'
+import { sorterPerioderEldsteFoerst } from '../../../../utils/sorterSykmeldingUtils'
 
 import PeriodeSeksjon from './PeriodeSeksjon'
 

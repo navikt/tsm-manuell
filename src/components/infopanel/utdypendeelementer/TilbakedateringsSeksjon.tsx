@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
-import ElementMedTekst from '../layout/ElementMedTekst'
 import { tilLesbarDatoMedArstall } from '../../../utils/datoUtils'
+import ElementMedTekst from '../layout/ElementMedTekst'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface TilbakedateringsSeksjonProps {
     kontaktDato: string | null

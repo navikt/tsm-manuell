@@ -47,9 +47,10 @@ typings/
 # TypeScript cache
 *.tsbuildinfo
 
-# Idea project files
-*.iml
-.idea/
+# idea
+.idea/*
+!.idea/OxcSettings.xml
+!.idea/OxfmtSettings.xml
 
 # next
 .next

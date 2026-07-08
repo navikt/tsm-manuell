@@ -1,20 +1,20 @@
 'use client'
 
-import React, { useCallback, useContext, useEffect, useRef, useState, useTransition } from 'react'
-import { logger } from '@navikt/next-logger'
 import { Alert, BodyShort, Button } from '@navikt/ds-react'
+import { logger } from '@navikt/next-logger'
 import { useRouter } from 'next/navigation'
+import React, { ReactElement, useCallback, useContext, useEffect, useRef, useState, useTransition } from 'react'
 
-import { ManuellOppgave } from '../types/manuellOppgave'
 import { StoreContext } from '../data/store'
-import { tilLesbarSykmelder } from '../utils/tekstUtils'
 import { manuellOppgave } from '../mock/manuellOppgave'
+import { ManuellOppgave } from '../types/manuellOppgave'
+import { tilLesbarSykmelder } from '../utils/tekstUtils'
 
+import Form, { FormShape } from './form/Form'
+import { submitOppgaveAction } from './submit-oppgave-action'
 import Sykmeldingheader from './sykmelding/SykmeldingHeader'
 import HeleSykmeldingen from './sykmelding/sykmeldingvarianter/HeleSykmeldingen'
 import TilbakedatertForlengelse from './sykmelding/sykmeldingvarianter/TilbakedatertForlengelse'
-import Form, { FormShape } from './form/Form'
-import { submitOppgaveAction } from './submit-oppgave-action'
 
 interface MainContentProps {
     manuellOppgave: ManuellOppgave
@@ -22,7 +22,7 @@ interface MainContentProps {
 
 const MainContent = ({
     manuellOppgave: { oppgaveid, sykmelding, personNrPasient, mottattDato, tildeltEnhetsnr },
-}: MainContentProps) => {
+}: MainContentProps): ReactElement => {
     const router = useRouter()
     const { aktivEnhet, setAktivEnhet } = useContext(StoreContext)
     const [visHeleSykmeldingen, setVisHeleSykmeldingen] = useState(false)

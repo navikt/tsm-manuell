@@ -1,8 +1,8 @@
 'use client'
 
-import React, { ReactElement, useEffect } from 'react'
-import { logger } from '@navikt/next-logger'
 import { Alert, BodyShort, Heading, Link } from '@navikt/ds-react'
+import { logger } from '@navikt/next-logger'
+import React, { ReactElement, useEffect } from 'react'
 
 type Props = {
     error: Error

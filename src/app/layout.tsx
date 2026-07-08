@@ -1,21 +1,20 @@
 import '../global.css'
-
-import React, { PropsWithChildren } from 'react'
 import { Metadata } from 'next'
+import React, { ReactElement } from 'react'
 
 import ModiaHeader from '../components/modiaheader/ModiaHeader'
-import { getModiaContext } from '../services/modia-service'
 import NoEnhetError from '../components/NoEnhetError'
+import { getModiaContext } from '../services/modia-service'
 
-import Providers from './_providers'
 import Preload from './_preload'
+import Providers from './_providers'
 
 export const metadata: Metadata = {
     title: 'Manuell vurdering av tilbakedatert sykmelding',
     description: 'Intern applikasjon for digitalisering vurdering av tilbakedatert sykmelding',
 }
 
-export default async function RootLayout({ children }: LayoutProps<'/'>) {
+export default async function RootLayout({ children }: LayoutProps<'/'>): Promise<ReactElement> {
     const modiaContext = await getModiaContext()
 
     return (

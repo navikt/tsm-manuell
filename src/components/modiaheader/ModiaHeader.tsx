@@ -1,12 +1,12 @@
 'use client'
 
-import React, { ReactElement, useContext } from 'react'
 import { InternalHeader } from '@navikt/ds-react'
 import { Heading, Label, Select } from '@navikt/ds-react'
 import Link from 'next/link'
+import React, { ReactElement, useContext } from 'react'
 
-import { ModiaContext, ModiaContextError } from '../../services/modia-service'
 import { StoreContext } from '../../data/store'
+import { ModiaContext, ModiaContextError } from '../../services/modia-service'
 
 interface Props {
     modiaContext?: ModiaContext | ModiaContextError

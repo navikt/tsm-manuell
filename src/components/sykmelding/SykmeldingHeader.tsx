@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
-import dayjs from 'dayjs'
 import { BodyShort, Heading } from '@navikt/ds-react'
+import dayjs from 'dayjs'
+import React, { ReactElement } from 'react'
 
 interface SykmeldingheaderProps {
     arbeidsgiverNavn: string | null

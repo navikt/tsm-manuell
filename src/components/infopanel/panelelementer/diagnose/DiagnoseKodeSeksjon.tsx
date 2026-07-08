@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import { BodyShort, Heading, HelpText } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 interface DiagnoseKodeSeksjonProps {
     kode: string

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 import ElementMedTekst from '../layout/ElementMedTekst'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface ArbeidsevneProps {
     tiltakArbeidsplassen: string | null
@@ -9,7 +9,7 @@ interface ArbeidsevneProps {
     andreTiltak: string | null
 }
 
-const Arbeidsevne = ({ tiltakArbeidsplassen, tiltakNAV, andreTiltak }: ArbeidsevneProps) => {
+const Arbeidsevne = ({ tiltakArbeidsplassen, tiltakNAV, andreTiltak }: ArbeidsevneProps): ReactElement | null => {
     if (!tiltakArbeidsplassen && !tiltakNAV && !andreTiltak) {
         return null
     }

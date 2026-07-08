@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
 import { Alert } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
 import { OppgaveFetchingError, UlosteOppgaverFetchingError } from '../services/syfosmmanuell-backend-service'
 

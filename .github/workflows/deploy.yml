@@ -19,6 +19,7 @@ jobs:
         with:
           READER_TOKEN: ${{ secrets.READER_TOKEN }}
       - run: yarn next typegen
+      - run: yarn fmt:check
       - run: yarn lint
       - run: yarn tsc
       - run: yarn test
@@ -100,7 +101,7 @@ jobs:
         env:
           CLUSTER: dev-gcp
           RESOURCE: .nais/nais-dev.yaml
-          VAR: image=${{ needs.build-dev.outputs.image }}
+          WORKLOAD_IMAGE: ${{ needs.build-dev.outputs.image }}
           NAIS_DEPLOY_SUMMARY: false
 
   deploy-demo-main:
@@ -117,7 +118,8 @@ jobs:
         env:
           CLUSTER: dev-gcp
           RESOURCE: .nais/nais-demo.yaml
-          VAR: image=${{ needs.build-demo.outputs.image }},ingress=https://${{ env.APP }}.ekstern.dev.nav.no,appname=${{ env.APP }},replicas=1,branchState=alive
+          WORKLOAD_IMAGE: ${{ needs.build-demo.outputs.image }}
+          VAR: ingress=https://${{ env.APP }}.ekstern.dev.nav.no,appname=${{ env.APP }},replicas=1,branchState=alive
           NAIS_DEPLOY_SUMMARY: false
 
   deploy-production:
@@ -134,7 +136,7 @@ jobs:
         env:
           CLUSTER: prod-gcp
           RESOURCE: .nais/nais-prod.yaml
-          VAR: image=${{ needs.build-prod.outputs.image }}
+          WORKLOAD_IMAGE: ${{ needs.build-prod.outputs.image }}
           NAIS_DEPLOY_SUMMARY: false
 
   security:

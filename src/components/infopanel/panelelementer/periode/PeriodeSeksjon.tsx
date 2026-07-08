@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react'
 import { BodyShort, Heading } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
+import { Periode } from '../../../../types/sykmelding'
 import { tilLesbarPeriodeMedArstall, countDaysBetweenTwoDatesIncludingFom } from '../../../../utils/datoUtils'
 import { periodeUndertekst } from '../../../../utils/tekstUtils'
-import { Periode } from '../../../../types/sykmelding'
 import { cleanId } from '../../../../utils/uu'
 
 interface PeriodeSeksjonProps {

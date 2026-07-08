@@ -1,9 +1,9 @@
-import { ReactElement, Suspense } from 'react'
 import { Skeleton } from '@navikt/ds-react'
+import { ReactElement, Suspense } from 'react'
 
-import { getUlosteOppgaver } from '../../services/syfosmmanuell-backend-service'
-import Oppgaver from '../../components/oppgaver/Oppgaver'
 import ManuellOppgaveErrors from '../../components/ManuellOppgaveErrors'
+import Oppgaver from '../../components/oppgaver/Oppgaver'
+import { getUlosteOppgaver } from '../../services/syfosmmanuell-backend-service'
 
 function Page(): ReactElement {
     return (

@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react'
 
-import ElementMedTekst from '../layout/ElementMedTekst'
-import { tilLesbarDatoMedArstall, daysBetweenDates, getSykmeldingStartDate } from '../../../utils/datoUtils'
 import { Periode } from '../../../types/sykmelding'
+import { tilLesbarDatoMedArstall, daysBetweenDates, getSykmeldingStartDate } from '../../../utils/datoUtils'
+import ElementMedTekst from '../layout/ElementMedTekst'
 
 interface TilbakedateringsinfoProps {
     perioder: Periode[]

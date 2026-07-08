@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 
+import { Prognose } from '../../../types/sykmelding'
 import { tilLesbarDatoMedArstall } from '../../../utils/datoUtils'
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 import ElementMedTekst from '../layout/ElementMedTekst'
 import EnkelCheckbox from '../layout/EnkelCheckbox'
-import { Prognose } from '../../../types/sykmelding'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface FriskmeldingProps {
     prognose: Prognose

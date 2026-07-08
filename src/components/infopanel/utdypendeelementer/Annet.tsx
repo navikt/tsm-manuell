@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 import ElementMedTekst from '../layout/ElementMedTekst'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface AnnetProps {
     behandlerTelefon: string | null
 }
 
-const Annet = ({ behandlerTelefon }: AnnetProps) => {
+const Annet = ({ behandlerTelefon }: AnnetProps): ReactElement | null => {
     if (!behandlerTelefon) {
         return null
     }

@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 
-import SeksjonMedTittel from '../layout/SeksjonMedTittel'
+import { ArbeidsrelatertArsakTypeValues, MedisinskArsakTypeValues, Periode } from '../../../types/sykmelding'
+import { tilLesbarPeriodeMedArstall } from '../../../utils/datoUtils'
 import ElementMedTekst from '../layout/ElementMedTekst'
 import EnkelCheckbox from '../layout/EnkelCheckbox'
-import { tilLesbarPeriodeMedArstall } from '../../../utils/datoUtils'
-import { ArbeidsrelatertArsakTypeValues, MedisinskArsakTypeValues, Periode } from '../../../types/sykmelding'
+import SeksjonMedTittel from '../layout/SeksjonMedTittel'
 
 interface MulighetForArbeidProps {
     perioder: Periode[]

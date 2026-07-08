@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
 interface InnrykkProps {
     children: ReactNode
 }
 
-const Innrykk = ({ children }: InnrykkProps) => {
+const Innrykk = ({ children }: InnrykkProps): ReactElement | null => {
     if (!children) {
         return null
     }

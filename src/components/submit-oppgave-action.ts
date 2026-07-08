@@ -16,7 +16,7 @@ const FormSchema = z.object({
     ]),
 })
 
-export async function submitOppgaveAction(oppgaveId: number, aktivEnhet: string, formData: FormShape) {
+export async function submitOppgaveAction(oppgaveId: number, aktivEnhet: string, formData: FormShape): Promise<void> {
     const formValues = FormSchema.parse(formData)
 
     await submitOppgave(oppgaveId, aktivEnhet, formValues)

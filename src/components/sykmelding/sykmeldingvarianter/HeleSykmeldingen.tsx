@@ -1,27 +1,27 @@
-import React from 'react'
 import { Button } from '@navikt/ds-react'
+import React, { ReactElement } from 'react'
 
-import MulighetForArbeid from '../../infopanel/utdypendeelementer/MulighetForArbeid'
-import Friskmelding from '../../infopanel/utdypendeelementer/Friskmelding'
-import UtdypendeOpplysninger from '../../infopanel/utdypendeelementer/UtdypendeOpplysninger'
-import Arbeidsevne from '../../infopanel/utdypendeelementer/Arbeidsevne'
-import Annet from '../../infopanel/utdypendeelementer/Annet'
-import { tilLesbarDatoMedArstall } from '../../../utils/datoUtils'
-import ElementMedTekst from '../../infopanel/layout/ElementMedTekst'
-import MeldingTilNAVSection from '../../infopanel/utdypendeelementer/MeldingTilNAVSection'
-import MeldingTilArbeidsgiverSection from '../../infopanel/utdypendeelementer/MeldingTilArbeidsgiverSection'
-import Diagnoser from '../../infopanel/utdypendeelementer/Diagnoser'
-import TilbakedateringsSeksjon from '../../infopanel/utdypendeelementer/TilbakedateringsSeksjon'
-import ArbeidsgiverSection from '../../infopanel/utdypendeelementer/ArbeidsgiverSection'
 import { Sykmelding } from '../../../types/sykmelding'
+import { tilLesbarDatoMedArstall } from '../../../utils/datoUtils'
 import { tilLesbarSykmelder } from '../../../utils/tekstUtils'
+import ElementMedTekst from '../../infopanel/layout/ElementMedTekst'
+import Annet from '../../infopanel/utdypendeelementer/Annet'
+import Arbeidsevne from '../../infopanel/utdypendeelementer/Arbeidsevne'
+import ArbeidsgiverSection from '../../infopanel/utdypendeelementer/ArbeidsgiverSection'
+import Diagnoser from '../../infopanel/utdypendeelementer/Diagnoser'
+import Friskmelding from '../../infopanel/utdypendeelementer/Friskmelding'
+import MeldingTilArbeidsgiverSection from '../../infopanel/utdypendeelementer/MeldingTilArbeidsgiverSection'
+import MeldingTilNAVSection from '../../infopanel/utdypendeelementer/MeldingTilNAVSection'
+import MulighetForArbeid from '../../infopanel/utdypendeelementer/MulighetForArbeid'
+import TilbakedateringsSeksjon from '../../infopanel/utdypendeelementer/TilbakedateringsSeksjon'
+import UtdypendeOpplysninger from '../../infopanel/utdypendeelementer/UtdypendeOpplysninger'
 
 interface HeleSykmeldingenProps {
     sykmelding: Sykmelding
     setVisHeleSykmeldingen: (value: boolean) => void
 }
 
-const HeleSykmeldingen = ({ sykmelding, setVisHeleSykmeldingen }: HeleSykmeldingenProps) => {
+const HeleSykmeldingen = ({ sykmelding, setVisHeleSykmeldingen }: HeleSykmeldingenProps): ReactElement => {
     return (
         <div className="p-4">
             <div className="border-b border-ax-border-neutral-subtle">
