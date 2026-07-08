@@ -2,9 +2,9 @@ apiVersion: 'nais.io/v1alpha1'
 kind: 'Application'
 metadata:
   name: '{{appname}}-demo'
-  namespace: teamsykmelding
+  namespace: tsm
   labels:
-    team: teamsykmelding
+    team: tsm
     branchState: '{{branchState}}'
 spec:
   port: 3000
