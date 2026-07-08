@@ -18,7 +18,7 @@ function ModiaHeader({ modiaContext }: Props): ReactElement {
     return (
         <InternalHeader className="justify-between">
             <InternalHeader.Title as={Link} href="/oppgaver">
-                syfosmmanuell
+                Tilbakedaterte sykmeldinger
             </InternalHeader.Title>
             <div className="flex flex-wrap">
                 {modiaContext && !('errorType' in modiaContext) && (
