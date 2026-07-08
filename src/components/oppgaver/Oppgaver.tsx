@@ -40,11 +40,11 @@ function Oppgaver({ oppgaver }: Props): ReactElement {
     }, [oppgaver, statusFilter])
 
     return (
-        <div className="max-w-[50rem] bg-white p-8">
+        <div className="max-w-200 bg-ax-bg-default p-8">
             <Heading size="large" spacing>
                 Uløste oppgaver ({filteredOppgaver.length})
             </Heading>
-            <div className="max-w-[50rem] bg-white p-4">
+            <div className="p-4">
                 <Chips>
                     {options.map((c) => (
                         <Chips.Toggle
@@ -84,26 +84,20 @@ function OppgaveLinkPanel({ oppgave }: { oppgave: UlostOppgave }) {
     const diffInDays = daysBetweenDates(oppgave.mottattDato, currentDate)
 
     return (
-        <LinkPanel
-            as={Link}
-            key={oppgave.oppgaveId}
-            href={`/?oppgaveid=${oppgave.oppgaveId}`}
-            className="flex flex-wrap xs:flex-nowrap [&>div]:w-full"
-            prefetch={false}
-        >
-            <div className="flex flex-wrap xs:flex-nowrap items-center">
-                <div className="w-full">
-                    <LinkPanel.Title>
-                        {oppgave.oppgaveId}: {tilLesbarDatoMedArstall(oppgave.mottattDato)}
-                    </LinkPanel.Title>
-                    <LinkPanel.Description className="flex w-full">
+        <LinkPanel as={Link} key={oppgave.oppgaveId} href={`/?oppgaveid=${oppgave.oppgaveId}`} prefetch={false}>
+            <LinkPanel.Title>
+                {oppgave.oppgaveId}: {tilLesbarDatoMedArstall(oppgave.mottattDato)}
+            </LinkPanel.Title>
+            <LinkPanel.Description className="flex w-full">
+                <div className="flex flex-col gap-2">
+                    <div>
                         {diffInDays > 0 ? <div>Mottatt for {diffInDays} dager siden</div> : <div>Mottatt i dag</div>}
-                    </LinkPanel.Description>
+                    </div>
+                    <div>
+                        <UlostOppgaveTag oppgave={oppgave} />
+                    </div>
                 </div>
-                <div className="shrink-0">
-                    <UlostOppgaveTag oppgave={oppgave} />
-                </div>
-            </div>
+            </LinkPanel.Description>
         </LinkPanel>
     )
 }

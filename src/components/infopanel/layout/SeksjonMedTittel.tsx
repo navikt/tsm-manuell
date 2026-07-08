@@ -8,7 +8,7 @@ interface SeksjonMedTittelProps {
 
 function SeksjonMedTittel({ tittel, children }: SeksjonMedTittelProps) {
     return (
-        <div className="border-b border-border-divider">
+        <div className="border-b border-ax-border-neutral-subtle">
             {tittel && (
                 <div style={{ marginTop: '2rem', marginBottom: '2rem' }}>
                     <Heading size="medium" level="3">

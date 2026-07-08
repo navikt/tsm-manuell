@@ -15,16 +15,20 @@ export const metadata: Metadata = {
     description: 'Intern applikasjon for digitalisering vurdering av tilbakedatert sykmelding',
 }
 
-export default async function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ children }: LayoutProps<'/'>) {
     const modiaContext = await getModiaContext()
 
     return (
         <html lang="no">
             <Preload />
             <Providers modiaContext={modiaContext}>
-                <body className="bg-bg-subtle">
+                <body className="bg-ax-bg-neutral-soft">
                     <ModiaHeader modiaContext={modiaContext} />
-                    <main id="maincontent" tabIndex={-1} className="mx-auto min-h-screen max-w-3xl bg-white p-8">
+                    <main
+                        id="maincontent"
+                        tabIndex={-1}
+                        className="mx-auto min-h-screen max-w-3xl bg-ax-bg-default p-8"
+                    >
                         {'errorType' in modiaContext ? <NoEnhetError /> : children}
                     </main>
                 </body>
