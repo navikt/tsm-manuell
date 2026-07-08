@@ -1,4 +1,4 @@
-# syfosmmanuell
+# tsm-manuell (formerly known as syfosmmanuell)
 
 Saksbehandlerfrontend for manuell behandling av tilbakedaterte sykemeldinger. Tillater saksbehandler
 å `godkjenne` eller `godkjenne med merknad`. Merknader som vises for bruker sluttbruker.
@@ -23,10 +23,10 @@ En demoside er offentlig tilgjengelig på: https://syfosmmanuell.ekstern.dev.nav
 
 ```mermaid
     graph LR;
-        gosys -- "saksbehnadler trykker på ''play knappen''" --- syfosmmanuell;
-        syfosmmanuell --- syfosmmanuell-bakcend ;
-        syfosmmanuell --- syfosmmanuell-bakcend ;
-        syfosmmanuell -- hent token --- azure-AD;
+        gosys -- "saksbehnadler trykker på ''play knappen''" --- tsm-manuell;
+        tsm-manuell --- syfosmmanuell-backend ;
+        tsm-manuell --- syfosmmanuell-backend ;
+        tsm-manuell -- hent token --- azure-AD;
 ```
 
 ## Utvikling
@@ -57,7 +57,7 @@ Vil laste miljøvariabler fra `/.env.development`
 
 ## Test
 
-Bruker React Testing Library for
+Bruker vitest
 
 ```bash
 $ yarn test

@@ -1,10 +1,10 @@
 apiVersion: 'nais.io/v1alpha1'
 kind: 'Application'
 metadata:
-  name: syfosmmanuell
-  namespace: teamsykmelding
+  name: tsm-manuell
+  namespace: tsm
   labels:
-    team: teamsykmelding
+    team: tsm
   annotations:
     nais.io/read-only-file-system: 'false'
 spec:
@@ -46,17 +46,19 @@ spec:
       autoLogin: true
   ingresses:
     - 'https://syfosmmanuell.intern.nav.no'
+    - 'https://tsm-manuell.intern.nav.no'
   accessPolicy:
     outbound:
       rules:
         - application: syfosmmanuell-backend
+          namespace: teamsykmelding
         - application: modiacontextholder
           namespace: personoversikt
   env:
     - name: SYFOSMMANUELL_BACKEND_SCOPE
       value: api://prod-gcp.teamsykmelding.syfosmmanuell-backend/.default
     - name: SYFOSMMANUELL_BACKEND_URL
-      value: http://syfosmmanuell-backend
+      value: http://syfosmmanuell-backend.teamsykmelding
     - name: MODIA_CONTEXT_SCOPE
       value: api://prod-gcp.personoversikt.modiacontextholder/.default
     - name: MODIA_CONTEXT_URL
