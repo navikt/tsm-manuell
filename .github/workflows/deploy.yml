@@ -18,8 +18,8 @@ jobs:
       - uses: navikt/tsm-workflows/actions/yarn@main
         with:
           READER_TOKEN: ${{ secrets.READER_TOKEN }}
-      - run: yarn next typegen
       - run: yarn fmt:check
+      - run: yarn next typegen
       - run: yarn lint
       - run: yarn tsc
       - run: yarn test
