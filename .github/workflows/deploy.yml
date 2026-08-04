@@ -36,6 +36,7 @@ jobs:
           env: dev
           team: 'tsm'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          server-actions-encryption-key: ${{ secrets.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY }}
     outputs:
       image: ${{ steps.next-build.outputs.image }}
 
@@ -52,6 +53,7 @@ jobs:
           env: demo
           team: 'tsm'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          server-actions-encryption-key: ${{ secrets.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY }}
     outputs:
       image: ${{ steps.next-build.outputs.image }}
 
@@ -67,6 +69,7 @@ jobs:
           env: prod
           team: 'tsm'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          server-actions-encryption-key: ${{ secrets.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY }}
     outputs:
       image: ${{ steps.next-build.outputs.image }}
 
