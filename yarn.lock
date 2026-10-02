@@ -538,12 +538,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navikt/tsm-oxlint@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@navikt/tsm-oxlint@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Ftsm-oxlint%2F0.0.3%2F9d1ac9872cb3810ea2bb7500605530d572d71c0a"
+"@navikt/tsm-oxlint@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@navikt/tsm-oxlint@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Ftsm-oxlint%2F0.0.7%2F6e8555b699389c4ddad5fd52993c5790f77c4c44"
   peerDependencies:
     oxlint: ">= 1"
-  checksum: 10c0/b5b3a54c621088f3e0e60028cce684552e8c29a0ea5e0680770798ac287728db8ce4a322b9ee7b173bf5cf2b22533d8ef052ebfe8bb13da611aec4375c0477ef
+  checksum: 10c0/e3b66a822b86f76ab460cb62320c6240dea49871995214b95f443774e6008dcbd4e6736bc60bf0a987f0afc37a09bd8798d6422e02e345a2845e7a1ddc6b5e05
   languageName: node
   linkType: hard
 
@@ -2776,7 +2776,7 @@ __metadata:
     "@navikt/next-logger": "npm:^5.0.0"
     "@navikt/oasis": "npm:^4.1.4"
     "@navikt/tsm-oxfmt": "npm:^0.0.9"
-    "@navikt/tsm-oxlint": "npm:^0.0.3"
+    "@navikt/tsm-oxlint": "npm:^0.0.7"
     "@tailwindcss/postcss": "npm:4.3.2"
     "@types/node": "npm:24.13.2"
     "@types/react": "npm:19.2.17"
