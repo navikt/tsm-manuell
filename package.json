@@ -33,7 +33,7 @@
     },
     "devDependencies": {
         "@navikt/tsm-oxfmt": "^0.0.9",
-        "@navikt/tsm-oxlint": "^0.0.3",
+        "@navikt/tsm-oxlint": "^0.0.7",
         "@tailwindcss/postcss": "4.3.2",
         "@types/node": "24.13.2",
         "@types/react": "19.2.17",
