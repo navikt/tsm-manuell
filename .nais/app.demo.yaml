@@ -1,15 +1,15 @@
 apiVersion: 'nais.io/v1alpha1'
 kind: 'Application'
 metadata:
-  name: '{{appname}}-demo'
+  name: 'tsm-manuell-demo'
   namespace: tsm
   labels:
     team: tsm
-    branchState: '{{branchState}}'
+
 spec:
   port: 3000
   ingresses:
-    - '{{ingress}}'
+    - https://tsm-manuell.ekstern.dev.nav.no
   replicas:
     min: 1
     max: 1
