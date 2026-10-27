@@ -1,27 +1,9 @@
-apiVersion: 'nais.io/v1alpha1'
-kind: 'Application'
-metadata:
-  name: tsm-manuell
-  namespace: tsm
-  labels:
-    team: tsm
 spec:
   replicas:
     min: 1
     max: 2
     cpuThresholdPercentage: 90
-  port: 3000
-  liveness:
-    path: /api/internal/is_alive
-  readiness:
-    path: /api/internal/is_ready
-  observability:
-    autoInstrumentation:
-      enabled: true
-      runtime: nodejs
-    logging:
-      destinations:
-        - id: loki
+
   resources:
     limits:
       cpu: 500m
@@ -29,27 +11,19 @@ spec:
     requests:
       cpu: 50m
       memory: 120Mi
+
   azure:
     application:
-      enabled: true
       tenant: trygdeetaten.no
       claims:
         groups:
           # 0000-GA-SYFO-SENSITIV geografisk tilgang til sykmeldinger
           - id: 'c8957e0a-909c-4b62-8e11-93aae6d295e6'
-    sidecar:
-      enabled: true
-      autoLogin: true
+
   ingresses:
     - 'https://syfosmmanuell.intern.dev.nav.no'
     - 'https://tsm-manuell.intern.dev.nav.no'
-  accessPolicy:
-    outbound:
-      rules:
-        - application: syfosmmanuell-backend
-          namespace: teamsykmelding
-        - application: modiacontextholder
-          namespace: personoversikt
+
   env:
     - name: SYFOSMMANUELL_BACKEND_SCOPE
       value: api://dev-gcp.teamsykmelding.syfosmmanuell-backend/.default

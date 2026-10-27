@@ -83,14 +83,14 @@ jobs:
     needs: [build-dev, test-and-verify]
     steps:
       - uses: actions/checkout@v7
-      - uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: dev-gcp
-          RESOURCE: .nais/nais-dev.yaml
-          WORKLOAD_IMAGE: ${{ needs.build-dev.outputs.image }}
-          NAIS_DEPLOY_SUMMARY: false
+      - uses: nais/setup@v1
+        with:
+          team: tsm
+          environment: dev-gcp
+      - name: deploy to dev-gcp
+        run: nais apply .nais/app.yaml --set spec.image="${{ needs.build-dev.outputs.image }}" --wait
 
-  deploy-demo-main:
+  deploy-demo:
     if: github.ref_name == 'main'
     name: Deploy main to demo
     environment:
@@ -100,13 +100,12 @@ jobs:
     needs: [build-demo, test-and-verify]
     steps:
       - uses: actions/checkout@v7
-      - uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: dev-gcp
-          RESOURCE: .nais/nais-demo.yaml
-          WORKLOAD_IMAGE: ${{ needs.build-demo.outputs.image }}
-          VAR: ingress=https://${{ env.APP }}.ekstern.dev.nav.no,appname=${{ env.APP }},replicas=1,branchState=alive
-          NAIS_DEPLOY_SUMMARY: false
+      - uses: nais/setup@v1
+        with:
+          team: tsm
+          environment: dev-gcp
+      - name: deploy demo to dev-gcp
+        run: nais apply .nais/app.demo.yaml --set spec.image="${{ needs.build-demo.outputs.image }}" --wait
 
   deploy-production:
     name: Deploy main to production
@@ -118,12 +117,12 @@ jobs:
     needs: [deploy-dev, build-prod]
     steps:
       - uses: actions/checkout@v7
-      - uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: prod-gcp
-          RESOURCE: .nais/nais-prod.yaml
-          WORKLOAD_IMAGE: ${{ needs.build-prod.outputs.image }}
-          NAIS_DEPLOY_SUMMARY: false
+      - uses: nais/setup@v1
+        with:
+          team: tsm
+          environment: prod-gcp
+      - name: deploy to prod-gcp
+        run: nais apply .nais/app.yaml --set spec.image="${{ needs.build-prod.outputs.image }}" --wait
 
   security:
     name: Security
