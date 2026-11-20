@@ -24,6 +24,7 @@ export interface FormShape {
 
 const Form = ({ onSubmit, submitting }: Props): ReactElement => {
     const { control, handleSubmit, formState, watch } = useForm<FormShape>()
+    // oxlint-disable-next-line react/incompatible-library
     const watchStatus = watch('status')
 
     return (

@@ -80,6 +80,7 @@ function Oppgaver({ oppgaver }: Props): ReactElement {
 }
 
 function OppgaveLinkPanel({ oppgave }: { oppgave: UlostOppgave }): ReactElement {
+    // oxlint-disable-next-line react/purity
     const currentDate = new Date().toISOString()
     const diffInDays = daysBetweenDates(oppgave.mottattDato, currentDate)
 
