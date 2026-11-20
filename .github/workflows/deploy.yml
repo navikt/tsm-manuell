@@ -131,6 +131,7 @@ jobs:
       contents: read
       id-token: write
       security-events: write
+      actions: read
     needs: build-prod
     uses: navikt/tsm-workflows/.github/workflows/security.yaml@main
     with:
