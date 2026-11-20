@@ -455,15 +455,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navikt/next-logger@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@navikt/next-logger@npm:5.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fnext-logger%2F5.0.1%2F9b62906c0f9db26caae24c314197f3e33f016474"
+"@navikt/next-logger@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@navikt/next-logger@npm:5.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fnext-logger%2F5.0.2%2Fe0119897f7c5bb3eab51bebb182fcc9b09aef94f"
   dependencies:
-    "@navikt/pino-logger": "npm:^5.0.1"
+    "@navikt/pino-logger": "npm:^5.0.2"
   peerDependencies:
     next: 14 || 15 || 16
     pino: 8 || 9 || 10
-  checksum: 10c0/addcc1787d6d0e3337ba32baa083088cb6fe26f74eb36908538a5f4603a62e160e19121ead6cd5b30008e293e8e7ded90a2ed74376c248e80f9b5fcd4956abda
+  checksum: 10c0/b221fbd089892e9935811e15cc16b5938273eb6e3cd5437b60a7bba21b64263b876cf7e26919dcfd0610c4167867896ccb7d61cd79d23d81f214d0a5be53a143
   languageName: node
   linkType: hard
 
@@ -479,9 +479,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navikt/pino-logger@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@navikt/pino-logger@npm:5.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fpino-logger%2F5.0.1%2F819f7f398e4378c014dd39f704c26f691a0915a1"
+"@navikt/pino-logger@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@navikt/pino-logger@npm:5.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fpino-logger%2F5.0.2%2F7cb892a73d8c4b0480edf989cf46dfdb123b8361"
   dependencies:
     "@opentelemetry/api": "npm:^1.9.1"
     pino-socket: "npm:8.0.0"
@@ -490,7 +490,7 @@ __metadata:
   dependenciesMeta:
     pino-socket:
       optional: true
-  checksum: 10c0/0336f83b22f4c89418326236f19855c2ecc3305af96205296d3a695ab21085ed2761cb783ad61e0e1c51eb676b1bd2743da1f8ed891ae3e16e27b65ae67c4233
+  checksum: 10c0/1646859c6ab5d057b1883dd06369de7735e20eaa00b6e6a32bfdeb93c90f7ddcd651b2ebb3ec6295e4039f7d5c34c8e2d64f9332ee3e6d74f2d8724a9fd81e8e
   languageName: node
   linkType: hard
 
@@ -2901,7 +2901,7 @@ __metadata:
     "@navikt/ds-css": "npm:^8.20.1"
     "@navikt/ds-react": "npm:^8.20.1"
     "@navikt/ds-tailwind": "npm:^8.20.1"
-    "@navikt/next-logger": "npm:^5.0.1"
+    "@navikt/next-logger": "npm:^5.0.2"
     "@navikt/oasis": "npm:^4.2.2"
     "@navikt/tsm-oxfmt": "npm:^0.0.11"
     "@navikt/tsm-oxlint": "npm:^0.0.7"
